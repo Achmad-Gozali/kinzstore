@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Moon } from "lucide-react";
 import { LOGO_SRC } from "@/lib/game-data";
-import { InstagramIcon, TikTokIcon, YoutubeIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, FacebookIcon } from "./icons";
 
 const COLUMNS = [
   {
@@ -45,7 +45,10 @@ export function Footer() {
             <div className="mt-4 flex items-center gap-4">
               <InstagramIcon className="size-6" />
               <TikTokIcon className="size-6" />
-              <YoutubeIcon className="size-6" />
+              {/* TODO: ganti dengan link Facebook resmi */}
+              <a href="#" aria-label="Facebook">
+                <FacebookIcon className="size-6" />
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:col-span-3">

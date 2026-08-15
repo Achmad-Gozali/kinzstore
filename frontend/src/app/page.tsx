@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Headset } from "lucide-react";
 import { GAMES, VOUCHERS, POPULAR, HERO_SRC } from "@/lib/game-data";
 import { GameCard } from "@/components/ui/GameCard";
+import { WhatsAppIcon } from "@/components/layout/icons";
+
+const WHATSAPP_NUMBER = "6282249244647";
 
 const PAGE_SIZE = 18;
 const VOUCHER_POPULAR = POPULAR.filter((p) => p.name === "Roblox Voucher");
@@ -122,15 +124,29 @@ function TopUpGamesSection() {
   );
 }
 
-function FloatingCSButton() {
+function FloatingWhatsAppButton() {
+  const href = `https://wa.me/${WHATSAPP_NUMBER}`;
   return (
-    <button
-      type="button"
-      className="fixed bottom-0 right-4 z-50 inline-flex items-center space-x-2.5 rounded-t-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg"
-    >
-      <Headset className="size-4" />
-      <span>CS</span>
-    </button>
+    <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden flex-col items-end rounded-2xl bg-card px-4 py-2 leading-tight text-card-foreground shadow-lg transition-transform hover:scale-105 sm:flex"
+      >
+        <span className="text-xs text-muted-foreground">Butuh Bantuan?</span>
+        <span className="text-sm font-bold">Chat Disini</span>
+      </a>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat WhatsApp"
+        className="flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+      >
+        <WhatsAppIcon className="size-7" />
+      </a>
+    </div>
   );
 }
 
@@ -143,7 +159,7 @@ export default function Home() {
           <TopUpGamesSection />
         </div>
       </main>
-      <FloatingCSButton />
+      <FloatingWhatsAppButton />
     </>
   );
 }
