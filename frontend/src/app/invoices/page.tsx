@@ -7,6 +7,7 @@ const TABLE_COLUMNS = ["Tanggal", "Nomor Invoice", "No. Handphone", "Harga", "St
 
 export default function InvoicesPage() {
   const [invoiceNumber, setInvoiceNumber] = useState("");
+  const [searchMessage, setSearchMessage] = useState<string | null>(null);
 
   async function handlePaste() {
     try {
@@ -19,7 +20,11 @@ export default function InvoicesPage() {
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
-    // dummy/placeholder: real invoice lookup logic belum diimplementasikan
+    setSearchMessage(
+      invoiceNumber.trim()
+        ? "Fitur pencarian invoice akan segera hadir."
+        : "Silakan masukkan nomor Invoice terlebih dahulu."
+    );
   }
 
   return (
@@ -35,10 +40,11 @@ export default function InvoicesPage() {
             onSubmit={handleSearch}
             className="mt-8 w-full max-w-xl rounded-3xl bg-background p-6 text-left shadow-md"
           >
-            <h3 className="text-sm font-semibold">Cari detail pembelian kamu disini</h3>
+            <h2 id="invoiceSearchLabel" className="text-sm font-semibold">Cari detail pembelian kamu disini</h2>
             <div className="relative py-4">
               <input
                 type="text"
+                aria-labelledby="invoiceSearchLabel"
                 value={invoiceNumber}
                 onChange={(e) => setInvoiceNumber(e.target.value)}
                 placeholder="Masukkan nomor Invoice Kamu (Contoh: KZXXXXXXXXXXXXX)"
@@ -60,6 +66,9 @@ export default function InvoicesPage() {
               <Search className="size-4" />
               Cari Invoice
             </button>
+            {searchMessage && (
+              <p className="mt-3 text-center text-xs text-muted-foreground">{searchMessage}</p>
+            )}
           </form>
         </div>
       </div>

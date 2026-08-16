@@ -8,7 +8,15 @@ export function ProductHero({ detail }: { detail: GameDetail }) {
       <div className="container mx-auto px-4 pt-10 pb-6">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end">
           <div className="relative size-28 shrink-0 overflow-hidden rounded-2xl ring-4 ring-background sm:size-36">
-            <Image src={detail.image} alt={detail.name} fill sizes="144px" className="object-cover" priority />
+            <Image
+              src={detail.image}
+              alt={detail.name}
+              fill
+              sizes="144px"
+              className="object-cover"
+              priority
+              fetchPriority="high"
+            />
           </div>
           <div className="flex-1 pb-1">
             <h1 className="text-xl font-bold uppercase tracking-wide sm:text-3xl">{detail.name}</h1>

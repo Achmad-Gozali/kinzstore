@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Search, LogIn, UserPlus, Menu, X, ChevronDown } from "lucide-react";
 import { LOGO_SRC } from "@/lib/game-data";
+import { SearchBox } from "./SearchBox";
 import {
   IndonesiaFlagIcon,
   TopupNavIcon,
@@ -30,17 +31,17 @@ const CALCULATOR_ITEMS = [
   },
   {
     label: "Magic Wheel",
-    href: "#",
+    href: "/calculator/magic-wheel",
     description:
       "Digunakan untuk mengetahui total maksimal diamond yang dibutuhkan untuk mendapatkan skin Legends.",
-    disabled: true,
+    disabled: false,
   },
   {
     label: "Zodiac",
-    href: "#",
+    href: "/calculator/zodiac",
     description:
       "Digunakan untuk mengetahui total diamond maksimal yang dibutuhkan untuk mendapatkan skin Zodiacs.",
-    disabled: true,
+    disabled: false,
   },
 ];
 
@@ -50,6 +51,7 @@ export function Header() {
   const [mobileCalcOpen, setMobileCalcOpen] = useState(false);
   const [calcOpen, setCalcOpen] = useState(false);
   const calcRef = useRef<HTMLDivElement>(null);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
 
   const calcActive = pathname.startsWith("/calculator");
 
@@ -79,33 +81,35 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between gap-2 px-4 sm:gap-4">
           <Link href="/" className="flex shrink-0 items-center">
             <span className="sr-only">KINZSTORE Logo</span>
-            <Image src={LOGO_SRC} alt="KINZSTORE" width={180} height={120} className="h-9 w-auto lg:h-10" />
+            <Image
+              src={LOGO_SRC}
+              alt="KINZSTORE"
+              width={180}
+              height={120}
+              sizes="60px"
+              className="h-9 w-auto lg:h-10"
+            />
           </Link>
           <div className="flex flex-1 items-center justify-end gap-2">
             <div className="relative hidden w-full md:flex">
-              <div className="relative w-full">
-                <input
-                  type="text"
-                  placeholder="Cari Game atau Voucher"
-                  className="h-9 w-full rounded-lg border border-muted-foreground/10 bg-input/80 pl-9 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                />
-                <Search className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-              </div>
+              <SearchBox className="w-full" inputClassName="h-9" />
             </div>
             <button
               type="button"
               aria-label="Cari"
+              onClick={() => {
+                setMobileOpen(true);
+                setMobileCalcOpen(false);
+                requestAnimationFrame(() => mobileSearchRef.current?.focus());
+              }}
               className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-border/50 hover:bg-accent/75 md:hidden"
             >
               <Search className="size-4" />
             </button>
-            <button
-              type="button"
-              className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg border border-border/50 px-2.5 py-2 text-xs hover:bg-accent/75 sm:px-3 sm:text-sm"
-            >
+            <div className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg border border-border/50 px-2.5 py-2 text-xs sm:px-3 sm:text-sm">
               <IndonesiaFlagIcon className="size-5 shrink-0" />
               <span className="ml-1.5 sm:ml-2">ID / IDR</span>
-            </button>
+            </div>
             <button
               type="button"
               aria-label={mobileOpen ? "Tutup menu" : "Buka menu"}
@@ -193,26 +197,25 @@ export function Header() {
           </div>
         </div>
         <div className="flex h-full items-center gap-5 text-sm font-medium">
-          <a href="#" className="inline-flex items-center gap-1.5">
+          <Link href="/masuk" className="inline-flex items-center gap-1.5">
             <LogIn className="size-4" />
             Masuk
-          </a>
-          <a href="#" className="inline-flex items-center gap-1.5">
+          </Link>
+          <Link href="/daftar" className="inline-flex items-center gap-1.5">
             <UserPlus className="size-4" />
             Daftar
-          </a>
+          </Link>
         </div>
       </nav>
 
       {mobileOpen && (
         <div className="border-b border-border/20 px-4 pb-4 md:hidden">
           <div className="relative mb-3 mt-1">
-            <input
-              type="text"
-              placeholder="Cari Game atau Voucher"
-              className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 pl-9 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            <SearchBox
+              inputRef={mobileSearchRef}
+              inputClassName="h-10 pl-9"
+              onNavigate={() => setMobileOpen(false)}
             />
-            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           </div>
           <div className="flex flex-col gap-1">
             {NAV_ITEMS.map(({ label, href, icon: Icon }) => {
@@ -276,22 +279,22 @@ export function Header() {
             </div>
           </div>
           <div className="mt-2 flex flex-col gap-1 border-t border-border/20 pt-2">
-            <a
-              href="#"
+            <Link
+              href="/masuk"
               onClick={() => setMobileOpen(false)}
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-accent/50"
             >
               <LogIn className="size-4" />
               Masuk
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/daftar"
               onClick={() => setMobileOpen(false)}
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-accent/50"
             >
               <UserPlus className="size-4" />
               Daftar
-            </a>
+            </Link>
           </div>
         </div>
       )}

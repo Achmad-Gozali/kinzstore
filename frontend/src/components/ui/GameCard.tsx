@@ -11,6 +11,7 @@ export function GameCard({ item, subtitle }: { item: GameItem; subtitle?: string
           alt={item.name}
           width={400}
           height={600}
+          sizes="(min-width: 1280px) 200px, (min-width: 1024px) 20vw, (min-width: 640px) 25vw, 33vw"
           className="aspect-4/6 w-full object-cover object-center"
         />
         <article className="absolute inset-x-0 -bottom-10 z-10 flex transform flex-col px-3 transition-all duration-300 ease-in-out group-hover:bottom-3 sm:px-4 group-hover:sm:bottom-4">

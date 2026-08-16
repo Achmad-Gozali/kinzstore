@@ -3,11 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GAMES, VOUCHERS, POPULAR, HERO_SRC } from "@/lib/game-data";
+import { GAMES, VOUCHERS, POPULAR, HERO_SRC, WHATSAPP_NUMBER } from "@/lib/game-data";
 import { GameCard } from "@/components/ui/GameCard";
 import { WhatsAppIcon } from "@/components/layout/icons";
-
-const WHATSAPP_NUMBER = "6282249244647";
 
 const PAGE_SIZE = 18;
 const VOUCHER_POPULAR = POPULAR.filter((p) => p.name === "Roblox Voucher");
@@ -17,7 +15,15 @@ function HeroBanner() {
     <section className="relative flex items-center overflow-hidden bg-secondary/50 px-4 py-4 lg:min-h-[554px] lg:py-8">
       <div className="container mx-auto">
         <div className="relative aspect-[1080/424] h-full overflow-hidden rounded-lg">
-          <Image src={HERO_SRC} alt="KINZSTORE - TopUp Games" fill className="object-cover" priority />
+          <Image
+            src={HERO_SRC}
+            alt="KINZSTORE - TopUp Games"
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            className="object-cover"
+            priority
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>
@@ -28,9 +34,9 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
   return (
     <div className="container mx-auto px-4">
       <div className="mb-5 text-foreground">
-        <h3 className="text-lg font-semibold uppercase leading-relaxed tracking-wider">
+        <h2 className="text-lg font-semibold uppercase leading-relaxed tracking-wider">
           🔥 Populer Sekarang!
-        </h3>
+        </h2>
         <p className="pl-6 text-xs text-muted-foreground">
           Berikut adalah beberapa produk yang paling populer saat ini.
         </p>
@@ -48,6 +54,7 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
                   alt={item.name}
                   width={80}
                   height={80}
+                  sizes="(min-width: 768px) 80px, 56px"
                   className="aspect-square h-14 w-14 rounded-[8px] object-cover object-center duration-300 group-hover:scale-110 md:h-20 md:w-20"
                 />
                 <div className="min-w-0">
@@ -155,6 +162,7 @@ export default function Home() {
   return (
     <>
       <main className="relative bg-gradient-theme pb-20 sm:pb-28 md:pb-36">
+        <h1 className="sr-only">KINZSTORE - Top Up Game Online Termurah</h1>
         <HeroBanner />
         <div className="pt-8">
           <TopUpGamesSection />

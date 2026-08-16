@@ -1,20 +1,36 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Moon } from "lucide-react";
-import { LOGO_SRC } from "@/lib/game-data";
+import { LOGO_SRC, WHATSAPP_NUMBER, INSTAGRAM_HANDLE } from "@/lib/game-data";
 import { InstagramIcon, TikTokIcon, FacebookIcon } from "./icons";
+
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const COLUMNS = [
   {
     title: "Peta Situs",
-    links: ["Beranda", "Masuk", "Daftar", "Cek Transaksi", "Hubungi Kami", "Ulasan"],
+    links: [
+      { label: "Beranda", href: "/" },
+      { label: "Masuk", href: "/masuk" },
+      { label: "Daftar", href: "/daftar" },
+      { label: "Cek Transaksi", href: "/invoices" },
+      { label: "Hubungi Kami", href: WHATSAPP_HREF, external: true },
+      { label: "Ulasan", href: "#" },
+    ],
   },
   {
     title: "Dukungan",
-    links: ["Whatsapp", "Gmail"],
+    links: [
+      { label: "Whatsapp", href: WHATSAPP_HREF, external: true },
+      { label: "Gmail", href: "#" },
+    ],
   },
   {
     title: "Legalitas",
-    links: ["Kebijakan Pribadi", "Syarat & Ketentuan"],
+    links: [
+      { label: "Kebijakan Pribadi", href: "/kebijakan-pribadi" },
+      { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
+    ],
   },
 ];
 
@@ -37,13 +53,23 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div>
-            <Image src={LOGO_SRC} alt="Kinzstore" width={180} height={120} className="h-16 w-auto" />
+            <Image
+              src={LOGO_SRC}
+              alt="Kinzstore"
+              width={180}
+              height={120}
+              sizes="96px"
+              className="h-16 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm text-foreground/90">
               Suplier TopUp Game Online termurah, Proses cepat serta open 24 Jam dengan metode
               pembayaran terlengkap di Indonesia
             </p>
             <div className="mt-4 flex items-center gap-4">
-              <InstagramIcon className="size-6" />
+              <a href={`https://instagram.com/${INSTAGRAM_HANDLE}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <InstagramIcon className="size-6" />
+              </a>
+              {/* TODO: belum ada link TikTok resmi */}
               <TikTokIcon className="size-6" />
               {/* TODO: ganti dengan link Facebook resmi */}
               <a href="#" aria-label="Facebook">
@@ -54,13 +80,25 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:col-span-3">
             {COLUMNS.map((col) => (
               <div key={col.title}>
-                <h4 className="mb-4 text-sm font-semibold text-primary">{col.title}</h4>
+                <h2 className="mb-4 text-sm font-semibold text-foreground">{col.title}</h2>
                 <ul className="space-y-3 text-sm text-foreground/90">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a href="#">{link}</a>
-                    </li>
-                  ))}
+                  {col.links.map((link) =>
+                    link.external ? (
+                      <li key={link.label}>
+                        <a href={link.href} target="_blank" rel="noopener noreferrer">
+                          {link.label}
+                        </a>
+                      </li>
+                    ) : link.href === "#" ? (
+                      <li key={link.label}>
+                        <span className="cursor-default text-foreground/60">{link.label}</span>
+                      </li>
+                    ) : (
+                      <li key={link.label}>
+                        <Link href={link.href}>{link.label}</Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             ))}
@@ -69,7 +107,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border/20">
         <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-foreground/80">
-          <span>&copy; 2026 KINZSTORE. All rights reserved.</span>
+          <span className="text-foreground">&copy; 2026 KINZSTORE. All rights reserved.</span>
           <button type="button" aria-label="Toggle theme" className="rounded-md p-1.5 hover:bg-accent/50">
             <Moon className="size-4" />
           </button>

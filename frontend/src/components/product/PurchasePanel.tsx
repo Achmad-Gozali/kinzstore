@@ -25,9 +25,9 @@ function StepCard({
         <div className="flex w-9 shrink-0 items-center justify-center bg-primary text-sm font-bold text-primary-foreground">
           {step}
         </div>
-        <div className="flex flex-1 items-center bg-muted/60 px-4 py-2.5 text-sm font-semibold uppercase tracking-wide">
+        <h2 className="flex flex-1 items-center bg-muted/60 px-4 py-2.5 text-sm font-semibold uppercase tracking-wide">
           {title}
-        </div>
+        </h2>
       </div>
       <div className="bg-secondary/30 p-4">{children}</div>
     </div>
@@ -186,6 +186,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
   const [whatsapp, setWhatsapp] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [activeTab, setActiveTab] = useState<"transaksi" | "keterangan">("transaksi");
 
   function showToast(message: string) {
     setToast(message);
@@ -236,7 +237,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
 
   const usernameField = (
     <div>
-      <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
+      <label htmlFor="usernameField" className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
         {detail.usernameLabel}
         {detail.usernameTooltip && (
           <span title={detail.usernameTooltip}>
@@ -245,6 +246,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
         )}
       </label>
       <input
+        id="usernameField"
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -254,18 +256,9 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
     </div>
   );
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      {toast && (
-        <div className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg bg-destructive px-4 py-2.5 text-sm font-medium text-white shadow-lg">
-          <CircleAlert className="size-4 shrink-0" />
-          {toast}
-        </div>
-      )}
-
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="flex flex-col gap-6 lg:col-span-2">
-          {hasAccountStep && (
+  const mainSteps = (
+    <>
+      {hasAccountStep && (
             <StepCard step={++step} title="Masukkan Data Akun">
               <div
                 className={cn(
@@ -276,7 +269,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
               >
                 {hasUsernameField && detail.usernamePosition !== "after" && usernameField}
                 <div>
-                  <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
+                  <label htmlFor="accountIdField" className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                     {detail.idLabel}
                     {detail.idTooltip && (
                       <span title={detail.idTooltip}>
@@ -285,6 +278,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
                     )}
                   </label>
                   <input
+                    id="accountIdField"
                     type="text"
                     value={accountId}
                     onChange={(e) => setAccountId(e.target.value)}
@@ -294,12 +288,13 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
                 </div>
                 {hasUsernameField && detail.usernamePosition === "after" && usernameField}
                 {hasServerField && (
-                  <div>
-                    <label className="mb-1.5 block text-sm font-medium text-muted-foreground">
+                  <div className={cn(hasUsernameField && "sm:col-span-2 lg:col-span-1")}>
+                    <label htmlFor="serverField" className="mb-1.5 block text-sm font-medium text-muted-foreground">
                       {detail.serverLabel}
                     </label>
                     {detail.serverOptions ? (
                       <select
+                        id="serverField"
                         value={serverId}
                         onChange={(e) => setServerId(e.target.value)}
                         className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -313,6 +308,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
                       </select>
                     ) : (
                       <input
+                        id="serverField"
                         type="text"
                         value={serverId}
                         onChange={(e) => setServerId(e.target.value)}
@@ -360,6 +356,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
               <input
                 type="number"
                 min={1}
+                aria-label="Jumlah Pembelian"
                 value={quantity}
                 onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))}
                 className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -401,6 +398,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
               <div className="flex gap-2">
                 <input
                   type="text"
+                  aria-label="Kode Promo"
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
                   placeholder="Ketik Kode Promo Kamu"
@@ -416,6 +414,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
               </div>
               <button
                 type="button"
+                onClick={() => showToast("Belum ada promo yang tersedia saat ini.")}
                 className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground"
               >
                 <Ticket className="size-3.5" /> Pakai Promo Yang Tersedia
@@ -426,8 +425,9 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
           <StepCard step={++step} title="Detail Kontak">
             <div className="flex flex-col gap-4">
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-muted-foreground">Email</label>
+                <label htmlFor="emailField" className="mb-1.5 block text-sm font-medium text-muted-foreground">Email</label>
                 <input
+                  id="emailField"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -436,8 +436,9 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-muted-foreground">No. WhatsApp</label>
+                <label htmlFor="whatsappField" className="mb-1.5 block text-sm font-medium text-muted-foreground">No. WhatsApp</label>
                 <input
+                  id="whatsappField"
                   type="tel"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
@@ -454,54 +455,128 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
               </div>
             </div>
           </StepCard>
+    </>
+  );
 
+  const ratingCard = (
+    <div className="rounded-xl bg-card/60 p-4">
+      <p className="mb-2 text-sm font-semibold text-muted-foreground">Ulasan dan rating</p>
+      <div className="flex items-center gap-3">
+        <span className="text-4xl font-bold">{detail.rating.toFixed(2)}</span>
+        <div className="flex gap-0.5 text-yellow-400">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="size-5 fill-current" />
+          ))}
+        </div>
+      </div>
+      <p className="mt-1 text-xs text-muted-foreground">Berdasarkan total {detail.ratingCount} rating</p>
+    </div>
+  );
+
+  const helpCard = (
+    <div className="flex items-center gap-3 rounded-xl bg-card/60 p-4">
+      <Headset className="size-6 shrink-0 text-primary" />
+      <div>
+        <p className="text-sm font-semibold">Butuh Bantuan?</p>
+        <p className="text-xs text-muted-foreground">Kamu bisa hubungi admin disini.</p>
+      </div>
+    </div>
+  );
+
+  const orderSummaryAndCta = (
+    <>
+      <div className="rounded-xl border border-dashed border-primary/40 bg-secondary/40 p-5 text-center text-sm text-muted-foreground">
+        {selectedNominal ? (
+          <div className="text-left">
+            <p className="font-semibold text-foreground">{selectedNominal.name}</p>
+            <p className="mt-1 text-xs">Jumlah: {quantity}</p>
+            <div className="mt-3 flex items-center justify-between border-t border-border/30 pt-3">
+              <span className="text-xs">Total</span>
+              <span className="text-base font-bold text-primary">Rp {formatIDR(total)}</span>
+            </div>
+          </div>
+        ) : (
+          "Belum ada item produk yang dipilih."
+        )}
+      </div>
+
+      <button
+        type="button"
+        onClick={handleOrder}
+        className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+      >
+        <ShoppingBag className="size-4" /> Pesan Sekarang!
+      </button>
+    </>
+  );
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {toast && (
+        <div className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg bg-destructive px-4 py-2.5 text-sm font-medium text-white shadow-lg">
+          <CircleAlert className="size-4 shrink-0" />
+          {toast}
+        </div>
+      )}
+
+      {/* Transaksi/Keterangan tab switcher — mobile & tablet only, matches reference behavior below lg (1024px) */}
+      <div className="mb-4 grid grid-cols-2 gap-2 rounded-full bg-muted/60 p-1 lg:hidden">
+        <button
+          type="button"
+          onClick={() => setActiveTab("transaksi")}
+          className={cn(
+            "rounded-full py-2 text-sm font-semibold transition-colors",
+            activeTab === "transaksi" ? "bg-primary text-primary-foreground" : "text-foreground"
+          )}
+        >
+          Transaksi
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveTab("keterangan")}
+          className={cn(
+            "rounded-full py-2 text-sm font-semibold transition-colors",
+            activeTab === "keterangan" ? "bg-primary text-primary-foreground" : "text-foreground"
+          )}
+        >
+          Keterangan
+        </button>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        {/* Main column: transaction steps (all breakpoints) + description (desktop only, matches reference which keeps it here) */}
+        <div
+          className={cn(
+            "flex-col gap-6 lg:col-span-2 lg:flex",
+            activeTab === "transaksi" ? "flex" : "hidden"
+          )}
+        >
+          {mainSteps}
+          <div className="hidden lg:block">{children}</div>
+        </div>
+
+        {/* Mobile/tablet-only "Keterangan" tab content: rating + help + description (desktop shows these in the sidebar/main column instead) */}
+        <div
+          className={cn(
+            "flex-col gap-6 lg:hidden",
+            activeTab === "keterangan" ? "flex" : "hidden"
+          )}
+        >
+          {ratingCard}
+          {helpCard}
           {children}
         </div>
 
-        <div className="flex flex-col gap-4 lg:sticky lg:top-28 lg:self-start">
-          <div className="rounded-xl bg-card/60 p-4">
-            <p className="mb-2 text-sm font-semibold text-muted-foreground">Ulasan dan rating</p>
-            <div className="flex items-center gap-3">
-              <span className="text-4xl font-bold">{detail.rating.toFixed(2)}</span>
-              <div className="flex gap-0.5 text-yellow-400">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-5 fill-current" />
-                ))}
-              </div>
-            </div>
-            <p className="mt-1 text-xs text-muted-foreground">Berdasarkan total {detail.ratingCount} rating</p>
-          </div>
-
-          <div className="flex items-center gap-3 rounded-xl bg-card/60 p-4">
-            <Headset className="size-6 shrink-0 text-primary" />
-            <div>
-              <p className="text-sm font-semibold">Butuh Bantuan?</p>
-              <p className="text-xs text-muted-foreground">Kamu bisa hubungi admin disini.</p>
-            </div>
-          </div>
-
-          <div className="rounded-xl border border-dashed border-primary/40 bg-secondary/40 p-5 text-center text-sm text-muted-foreground">
-            {selectedNominal ? (
-              <div className="text-left">
-                <p className="font-semibold text-foreground">{selectedNominal.name}</p>
-                <p className="mt-1 text-xs">Jumlah: {quantity}</p>
-                <div className="mt-3 flex items-center justify-between border-t border-border/30 pt-3">
-                  <span className="text-xs">Total</span>
-                  <span className="text-base font-bold text-primary">Rp {formatIDR(total)}</span>
-                </div>
-              </div>
-            ) : (
-              "Belum ada item produk yang dipilih."
-            )}
-          </div>
-
-          <button
-            type="button"
-            onClick={handleOrder}
-            className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
-          >
-            <ShoppingBag className="size-4" /> Pesan Sekarang!
-          </button>
+        {/* Sidebar: always visible on desktop; on mobile only the order summary/CTA shows, under the Transaksi tab */}
+        <div
+          className={cn(
+            "flex-col gap-4 lg:flex lg:sticky lg:top-28 lg:self-start",
+            activeTab === "transaksi" ? "flex" : "hidden lg:flex"
+          )}
+        >
+          <div className="hidden lg:block">{ratingCard}</div>
+          <div className="hidden lg:block">{helpCard}</div>
+          {orderSummaryAndCta}
         </div>
       </div>
     </div>

@@ -24,14 +24,14 @@ const RAW_GAMES: [string, string][] = [
   ["Daybreak Legends", "jpeg"], ["Dragon Raja", "webp"], ["Dunk City Dynasty", "webp"], ["Echocalypse", "webp"], ["EGGY PARTY", "webp"], ["Ensemble Stars Music", "webp"], ["Eudemons Online", "webp"],
   ["Farlight84", "jpg"], ["FC Mobile", "webp"], ["Football Master 2", "webp"], ["Garena Undawn", "webp"], ["Goddess of Victory: Nikke", "webp"], ["Growtopia", "webp"], ["Guns of Glory", "webp"], ["Harry Potter Magic Awakened", "jpg"],
   ["Hatsune Miku : Colorful Stage", "webp"], ["Heroes Evolved", "webp"], ["Honkai Impact 3", "webp"], ["Honor of Kings", "webp"], ["Identity V", "webp"],
-  ["Idle Legends : GODS SAGA", "webp"], ["Infinite Borders", "webp"], ["Jade Legends", "webp"], ["King of Avalon", "webp"], ["Kings Choice", "webp"], ["Laplace M", "webp"], ["League of Legends : PC", "webp"], ["League of Legends : Wild Rift", "jpg"],
-  ["Legacy Fate Sacred Fearless", "webp"], ["Legends of Runeterra", "webp"], ["King of Kings", "webp"], ["Life After", "webp"], ["Life Makeover", "webp"], ["Light of Thel : New Era", "webp"], ["Lords Mobile", "webp"], ["Love and Deepspace", "webp"],
-  ["Luna Online New World", "webp"], ["Madtale", "webp"], ["Maplestory R Evolution", "webp"], ["Marvel Duel", "webp"], ["Marvel Snap", "webp"], ["MARVEL Super War", "webp"], ["Metal Slug : Awakening", "webp"], ["Miko Era : Twelve Myths", "webp"],
-  ["Mirage : Perfect Skyline", "webp"], ["Misty Continent", "webp"], ["MU Origin 2", "webp"], ["MU Origin 3", "webp"], ["Naruto : Slugfest X", "webp"], ["Never After", "webp"], ["Omega Legends", "webp"], ["One Punch Man : The Strongest", "webp"],
+  ["Idle Legends : GODS SAGA", "webp"], ["Infinite Borders", "webp"], ["Jade Legends", "webp"], ["King of Avalon", "webp"], ["Kings Choice", "webp"], ["League of Legends : PC", "webp"],
+  ["Legacy Fate Sacred Fearless", "webp"], ["Life After", "webp"], ["Life Makeover", "webp"], ["Light of Thel : New Era", "webp"], ["Lords Mobile", "webp"], ["Love and Deepspace", "webp"],
+  ["Madtale", "webp"], ["Maplestory R Evolution", "webp"], ["Marvel Duel", "webp"], ["MARVEL Super War", "webp"], ["Metal Slug : Awakening", "webp"],
+  ["Misty Continent", "webp"], ["MU Origin 2", "webp"], ["MU Origin 3", "webp"], ["Never After", "webp"], ["Omega Legends", "webp"], ["One Punch Man : The Strongest", "webp"],
   ["Perfect World", "webp"], ["Phantasy Star Online 2 : New Genesis", "webp"], ["Pixel Gun 3D", "jpg"], ["Point Blank", "webp"], ["Project Entropy", "webp"], ["PUBG : New State Mobile", "webp"], ["Punishing Gray Raven", "webp"], ["Ragnarok M : Eternal Love", "webp"],
-  ["Ragnarok Origin", "jpg"], ["Ragnarok Origin - Package", "webp"], ["Ragnarok X", "webp"], ["Revelation : Infinite Journey", "webp"], ["Rise of Kingdom", "webp"], ["Saint Seiya", "webp"], ["Sausage Man", "webp"], ["Scroll of Onmyoji Sakura Sword", "webp"],
-  ["Seal M SEA", "webp"], ["Sky: Children of the Light", "webp"], ["Speed Drifters", "webp"], ["State of Survival: Zombie War", "webp"], ["Stormshot", "webp"], ["Super Mecha Champions", "webp"], ["Super SUS", "webp"], ["Teamfight Tactics Mobile", "webp"],
-  ["Time Raiders", "webp"], ["Tom and Jerry: Chase", "webp"], ["Tower Brawl", "webp"], ["Tower of Fantasy", "jpg"], ["Valorant", "jpg"], ["Werewolf (Party Game)", "webp"], ["Whiteout Survival", "webp"], ["YS 6 Mobile", "webp"],
+  ["Ragnarok Origin", "jpg"], ["Ragnarok X", "webp"], ["Revelation : Infinite Journey", "webp"], ["Sausage Man", "webp"], ["Scroll of Onmyoji Sakura Sword", "webp"],
+  ["Speed Drifters", "webp"], ["State of Survival: Zombie War", "webp"], ["Stormshot", "webp"], ["Super SUS", "webp"],
+  ["Time Raiders", "webp"], ["Tom and Jerry: Chase", "webp"], ["Tower Brawl", "webp"], ["Valorant", "jpg"], ["Werewolf (Party Game)", "webp"],
   ["Zepeto", "webp"],
 ];
 
@@ -60,3 +60,5 @@ export const POPULAR: PopularItem[] = RAW_POPULAR.map(([name, publisher, ext]) =
 
 export const LOGO_SRC = "/images/logo.jpg";
 export const HERO_SRC = "/images/hero-banner.jpg";
+export const WHATSAPP_NUMBER = "6282249244647";
+export const INSTAGRAM_HANDLE = "achmadgozali27_";

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { Trophy } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Leaderboard - Top 10 Pembelian Terbanyak",
+  description:
+    "Lihat daftar 10 pembelian terbanyak di KINZSTORE hari ini, minggu ini, dan bulan ini. Data diperbaharui secara real-time.",
+  alternates: { canonical: "/leaderboard" },
+};
 
 const PERIODS = ["Top 10 - Hari Ini", "Top 10 - Minggu Ini", "Top 10 - Bulan Ini"];
 
@@ -27,10 +35,10 @@ export default function LeaderboardPage() {
       <section className="relative pb-12 pt-16 sm:pt-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary">Leaderboard</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <p className="text-base font-semibold leading-7 text-primary">Leaderboard</p>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Top 10 Pembelian Terbanyak di KINZSTORE
-            </p>
+            </h1>
           </div>
           <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-7 text-foreground sm:text-lg sm:leading-8">
             Berikut ini adalah daftar 10 pembelian terbanyak yang dilakukan oleh pelanggan kami.
