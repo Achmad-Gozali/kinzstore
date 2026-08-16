@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { GameItem } from "@/types/game";
 
 export function GameCard({ item, subtitle }: { item: GameItem; subtitle?: string }) {
   return (
-    <a href="#" className="relative block">
+    <Link href={`/${item.slug}`} className="relative block">
       <div className="group relative transform overflow-hidden rounded-[16px] bg-muted duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background">
         <Image
           src={item.image}
@@ -18,6 +19,6 @@ export function GameCard({ item, subtitle }: { item: GameItem; subtitle?: string
         </article>
         <div className="absolute inset-0 transform bg-gradient-to-t from-transparent transition-all duration-300 group-hover:from-background" />
       </div>
-    </a>
+    </Link>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { GAMES, VOUCHERS, POPULAR, HERO_SRC } from "@/lib/game-data";
 import { GameCard } from "@/components/ui/GameCard";
 import { WhatsAppIcon } from "@/components/layout/icons";
@@ -37,8 +38,8 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
       <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {items.map((item) => (
           <li key={item.slug} className="relative">
-            <a
-              href="#"
+            <Link
+              href={`/${item.slug}`}
               className="bg-popular-background flex items-center gap-x-2 rounded-[16px] bg-muted text-foreground duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3"
             >
               <div className="group flex items-center gap-3 p-2">
@@ -54,7 +55,7 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
                   <p className="truncate text-xs opacity-75">{item.publisher}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
