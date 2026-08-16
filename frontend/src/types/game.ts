@@ -55,7 +55,14 @@ export interface GameDetail {
   rating: number;
   ratingCount: string;
   idLabel?: string;
+  /** Extra account field alongside the ID field, e.g. a game username separate from the numeric ID. */
+  usernameLabel?: string;
+  usernameTooltip?: string;
+  /** Where the username field renders relative to ID. Defaults to "before". */
+  usernamePosition?: "before" | "after";
   serverLabel?: string;
+  /** When present, the server field renders as a <select> with these fixed options instead of free text. */
+  serverOptions?: string[];
   idTooltip?: string;
   idNote?: string;
   categories: NominalCategory[];

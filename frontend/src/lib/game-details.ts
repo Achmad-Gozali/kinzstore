@@ -1,72 +1,8 @@
-import type { GameDetail, NominalVariant, PaymentGroup } from "@/types/game";
-
-function variant(name: string, price: number, opts?: Partial<NominalVariant>): NominalVariant {
-  return { id: name, name, price, instant: true, ...opts };
-}
-
-function createPaymentGroups(): PaymentGroup[] {
-  return [
-    {
-      id: "qris",
-      label: "Qris (All Payment)",
-      featured: true,
-      logo: "/payment/qris.webp",
-      badge: "BEST PRICE",
-      info: "Min. Rp 1.000",
-      options: [],
-    },
-    {
-      id: "ewallet",
-      label: "E-Wallet",
-      options: [
-        { name: "OVO", logo: "/payment/ovo.webp", fee: "Rp 3.639", note: "Pakai Aplikasi OVO" },
-        { name: "DOKU Wallet", logo: "/payment/doku.jpg", fee: "Rp 2.500", note: "Realtime" },
-        { name: "DANA", logo: "/payment/dana.webp", fee: "Rp 2.500", note: "Pakai Aplikasi DANA" },
-        { name: "GoPay", logo: "/payment/gopay.webp", fee: "Rp 3.000", note: "Pakai Aplikasi GoPay" },
-        { name: "ShopeePay", logo: "/payment/shopeepay.webp", fee: "Rp 3.000", note: "Pakai Aplikasi Shopee" },
-        { name: "LinkAja", logo: "/payment/linkaja.webp", fee: "Rp 2.000", note: "Pakai Aplikasi LinkAja" },
-      ],
-    },
-    {
-      id: "va",
-      label: "Virtual Account",
-      options: [
-        { name: "Maybank", logo: "/payment/maybank-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "BNI", logo: "/payment/bni-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "BSI", logo: "/payment/bsi-va.png", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "BRIVA (BRI)", logo: "/payment/bri-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Bank Sinarmas", logo: "/payment/sinarmas-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Bank Neo Commerce", logo: "/payment/bank-neo-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Danamon", logo: "/payment/danamon-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "PermataBank", logo: "/payment/permata-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "BCA", logo: "/payment/bca-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Mandiri", logo: "/payment/mandiri-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "OCBC", logo: "/payment/ocbc-va.png", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "DOKU Wallet", logo: "/payment/doku.jpg", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Bank Muamalat", logo: "/payment/muamalat-va.png", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "CIMB Niaga", logo: "/payment/cimb-niaga-va.webp", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-        { name: "Bank BTN", logo: "/payment/btn-va.png", fee: "Rp 4.000", note: "Min. Rp 10.000" },
-      ],
-    },
-    {
-      id: "cstore",
-      label: "Convenience Store",
-      options: [
-        { name: "Indomaret", logo: "/payment/indomaret.webp", fee: "Fee= 2300", note: "Pengecekan membutuhkan waktu 5-15 menit" },
-        { name: "Alfamart", logo: "/payment/alfamart.webp", fee: "Fee= 2300", note: "Pengecekan membutuhkan waktu 5-15 menit" },
-      ],
-    },
-    {
-      id: "bank",
-      label: "Transfer Bank",
-      options: [
-        { name: "BRI", logo: "/payment/bri-transfer.webp", fee: "Rp 5.000", note: "Konfirmasi manual, cek berkala" },
-        { name: "BNI", logo: "/payment/bni-transfer.webp", fee: "Rp 5.000", note: "Konfirmasi manual, cek berkala" },
-        { name: "Mandiri", logo: "/payment/mandiri-transfer.webp", fee: "Rp 5.000", note: "Konfirmasi manual, cek berkala" },
-      ],
-    },
-  ];
-}
+import type { GameDetail, NominalVariant } from "@/types/game";
+import { variant, createPaymentGroups } from "./game-detail-helpers";
+import { GAME_DETAILS_2 } from "./game-details-2";
+import { GAME_DETAILS_3 } from "./game-details-3";
+import { GAME_DETAILS_4 } from "./game-details-4";
 
 const MOBILE_LEGENDS: GameDetail = {
   slug: "mobile-legends",
@@ -604,6 +540,294 @@ const KINGS_CHOICE: GameDetail = {
   ],
 };
 
+const OCTOPATH_TRAVELER: GameDetail = {
+  slug: "octopath-traveler-cotc",
+  name: "Octopath Traveler CotC",
+  publisher: "SQUARE ENIX Co.,Ltd.",
+  image: "/games/octopath-traveler-cotc.webp",
+  rating: 5.0,
+  ratingCount: "6",
+  idLabel: "ID",
+  serverLabel: "Server",
+  serverOptions: ["Global"],
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Topup Instant",
+      items: [
+        variant("Ruby Set A (16+1 Bonus)", 14658, { icon: null }),
+        variant("Ruby Set B (60+3 Bonus)", 59711, { icon: null }),
+        variant("Ruby Set C (160+8 Bonus)", 171035, { icon: null }),
+        variant("Ruby Set D (290+15 Bonus)", 302600, { icon: null }),
+        variant("Ruby Set E (480+24 Bonus)", 576046, { icon: null }),
+        variant("Ruby Set F (1000+50 Bonus)", 1011024, { icon: null }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Octopath Traveler CotC",
+  descriptionIntro:
+    "Top up Ruby Octopath Traveler : CotC harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionSteps: [
+    "Cara topup :",
+    "1) Pilih Nominal",
+    "2) Masukkan Data Akun",
+    "3) Tentukan Jumlah Pembelian",
+    "4) Pilih Pembayaran",
+    "5) Masukkan Kode Promo (jika ada)",
+    "6) Isi Detail Kontak",
+    "7) Klik Pesan Sekarang dan lakukan Pembayaran",
+    "8) Selesai",
+  ],
+};
+
+const MOONLIGHT_BLADE_M: GameDetail = {
+  slug: "moonlight-blade-m",
+  name: "Moonlight Blade M",
+  publisher: "VNGGames International",
+  image: "/games/moonlight-blade-m.webp",
+  rating: 0,
+  ratingCount: "0",
+  idLabel: "ID",
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Topup Instan",
+      items: [
+        variant("Ticket Package 1", 13762, { icon: null }),
+        variant("Ticket Package 2", 41847, { icon: null }),
+        variant("Ticket Package 3", 98017, { icon: null }),
+        variant("Ticket Package 4", 182272, { icon: null }),
+        variant("Ticket Package 5", 294891, { icon: null }),
+        variant("Ticket Package 6", 435316, { icon: null }),
+        variant("Ticket Package 7", 783567, { icon: null }),
+        variant("Ticket Package 8", 1120585, { icon: null }),
+        variant("Ticket Package 9", 1401433, { icon: null }),
+        variant("Ticket Package 10", 2243977, { icon: null }),
+        variant("Ticket Package 11", 5614154, { icon: null }),
+      ],
+    },
+    {
+      emoji: "",
+      label: "Spesial Items",
+      items: [
+        variant("Paket 1", 8146, { icon: null }),
+        variant("Paket 2", 13762, { icon: null }),
+        variant("Paket 3", 27805, { icon: null }),
+        variant("Elite Battle Pass", 55890, { icon: null }),
+        variant("Card Pack Normal", 55890, { icon: null }),
+        variant("Paket Kartu (Normal)", 57416, { icon: null }),
+        variant("Elite ke Collector", 140144, { icon: null }),
+        variant("Card Pack Advanced", 140144, { icon: null }),
+        variant("Paket Kartu (Advanced)", 140448, { icon: null }),
+        variant("Dana Pertumbuhan 1", 182272, { icon: null }),
+        variant("Collector Battle Pass", 196314, { icon: null }),
+        variant("Dana Pertumbuhan 2", 252483, { icon: null }),
+        variant("Paket 1 Minggu", 266526, { icon: null }),
+        variant("Dana Pertumbuhan 3", 334210, { icon: null }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Moonlight Blade M",
+  descriptionIntro: "Top up Paket Moonlight Blade M harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionSteps: [
+    "Cara topup :",
+    "1) Pilih Nominal",
+    "2) Masukkan Data Akun",
+    "3) Tentukan Jumlah Pembelian",
+    "4) Pilih Pembayaran",
+    "5) Masukkan Kode Promo (jika ada)",
+    "6) Isi Detail Kontak",
+    "7) Klik Pesan Sekarang dan lakukan Pembayaran",
+    "8) Selesai",
+  ],
+};
+
+const KINGDOM_THE_BLOOD: GameDetail = {
+  slug: "kingdom-the-blood",
+  name: "Kingdom The Blood",
+  publisher: "Linked Inc.",
+  image: "/games/kingdom-the-blood.webp",
+  rating: 0,
+  ratingCount: "0",
+  idLabel: "ID",
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Topup Instan",
+      items: [
+        variant("75 Gold", 14621, { icon: null }),
+        variant("300 Gold", 48586, { icon: null }),
+        variant("750 Gold", 120943, { icon: null }),
+        variant("2250 Gold", 358622, { icon: null }),
+        variant("3750 Gold", 605299, { icon: null }),
+        variant("7500 Gold", 1210745, { icon: null }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Kingdom The Blood",
+  descriptionIntro: "Top up Gold Kingdom: The Blood harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionSteps: [
+    "Cara topup :",
+    "1) Pilih Nominal",
+    "2) Masukkan Data Akun",
+    "3) Tentukan Jumlah Pembelian",
+    "4) Pilih Pembayaran",
+    "5) Masukkan Kode Promo (jika ada)",
+    "6) Isi Detail Kontak",
+    "7) Klik Pesan Sekarang dan lakukan Pembayaran",
+    "8) Selesai",
+  ],
+};
+
+const TARISLAND: GameDetail = {
+  slug: "tarisland",
+  name: "Tarisland",
+  publisher: "Tencent Games",
+  image: "/games/tarisland.webp",
+  rating: 0,
+  ratingCount: "0",
+  idLabel: "ID",
+  serverLabel: "Server",
+  idTooltip:
+    "Tulis ID berupa angka dan Server antara ASIA 1-100/NA 1-100/LATAM 1-100/EU 1-100/EE. 1-99. Contoh : 1234567 ASIA-87",
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Spesial Item",
+      items: [
+        variant("Weekly Ticket", 17881, { icon: null }),
+        variant("Monthly Ticket", 52787, { icon: null }),
+        variant("Semiannual Ticket", 297137, { icon: null }),
+      ],
+    },
+    {
+      emoji: "",
+      label: "Topup",
+      items: [
+        variant("60 Cristals", 14475, { icon: null }),
+        variant("330 Crystals", 70666, { icon: null }),
+        variant("700 Crystals", 143886, { icon: null }),
+        variant("1800 Crystals", 339706, { icon: null }),
+        variant("3600 Crystals", 680263, { icon: null }),
+        variant("7250 Crystals", 1446516, { icon: null }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Tarisland",
+  descriptionIntro: "Top up crystals TARISLAND harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionSteps: [
+    "Cara topup :",
+    "1) Pilih Nominal",
+    "2) Masukkan Data Akun",
+    "3) Tentukan Jumlah Pembelian",
+    "4) Pilih Pembayaran",
+    "5) Masukkan Kode Promo (jika ada)",
+    "6) Isi Detail Kontak",
+    "7) Klik Pesan Sekarang dan lakukan Pembayaran",
+    "8) Selesai",
+  ],
+};
+
+const ARENA_BREAKOUT: GameDetail = {
+  slug: "arena-breakout",
+  name: "Arena Breakout",
+  publisher: "Level Infinite",
+  image: "/games/arena-breakout.webp",
+  rating: 4.99,
+  ratingCount: "1.54rb",
+  idLabel: "ID",
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Special Items",
+      items: [
+        variant("Pilihan Pemula", 14657, { icon: null }),
+        variant("Battle Pass Lanjutan", 19000, { icon: null }),
+        variant("Kotak Antipeluru (30 hari)", 44332, { icon: null }),
+        variant("Battle Pass Premium", 76901, { icon: null }),
+        variant("Kotak Komposit (30 hari)", 133355, { icon: null }),
+      ],
+    },
+    {
+      emoji: "",
+      label: "Top Up Instant",
+      items: [
+        variant("66 (60+6) Bonds", 16105, { icon: null }),
+        variant("335 (310+25) Bonds", 81606, { icon: null }),
+        variant("675 (630+45) Bonds", 163392, { icon: null }),
+        variant("1690 (1580+110) Bonds", 408387, { icon: null }),
+        variant("3400 (3200+200) Bonds", 818040, { icon: null }),
+        variant("6820 (6500+320) Bonds", 1633364, { icon: null }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Arena Breakout",
+  descriptionIntro:
+    "Top up bond Arena Breakout harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionSteps: [
+    "Cara topup :",
+    "1) Masukkan Data Akun",
+    "2) Pilih Nominal",
+    "3) Tentukan Jumlah Pembelian",
+    "4) Pilih Pembayaran",
+    "5) Masukkan Kode Promo (jika ada)",
+    "6) Isi Detail Kontak",
+    "7) Klik Pesan Sekarang dan lakukan Pembayaran",
+    "8) Selesai",
+  ],
+};
+
+const ARENA_OF_VALOR: GameDetail = {
+  slug: "arena-of-valor",
+  name: "Arena of Valor",
+  publisher: "Garena",
+  image: "/games/arena-of-valor.webp",
+  rating: 4.99,
+  ratingCount: "230",
+  idLabel: "Open ID",
+  idTooltip:
+    "Untuk menemukan ID Pemain Anda, klik ikon Pengaturan di sudut kanan atas layar dan buka tab 'General'",
+  idNote: "Pastikan kamu mengisi data akun dengan benar.",
+  categories: [
+    {
+      emoji: "",
+      label: "Bisa untuk semua akun AOV",
+      items: [
+        variant("40 Vouchers", 8983, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("90 Vouchers", 17964, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("230 Vouchers", 44908, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("470 Vouchers", 89817, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("950 Vouchers", 179634, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("1430 Vouchers", 269449, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("2390 Vouchers", 449082, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("4800 Vouchers", 907145, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("24050 Vouchers", 4526742, { icon: "/images/aov-voucher-icon.webp" }),
+        variant("48200 Vouchers", 9071447, { icon: "/images/aov-voucher-icon.webp" }),
+      ],
+    },
+  ],
+  paymentGroups: createPaymentGroups(),
+  descriptionTitle: "Deskripsi Arena of Valor",
+  descriptionIntro: "Top up voucher Arena of Valor harga paling murah. Cara beli voucher AOV termurah :",
+  descriptionSteps: [
+    "Masukkan Open ID",
+    "Pilih Nominal",
+    "Pilih Pembayaran",
+    "Klik Order Now & lakukan Pembayaran",
+    "Voucher masuk otomatis ke akun Anda",
+  ],
+};
+
 const GAME_DETAILS: Record<string, GameDetail> = {
   [MOBILE_LEGENDS.slug]: MOBILE_LEGENDS,
   [FREE_FIRE.slug]: FREE_FIRE,
@@ -611,8 +835,17 @@ const GAME_DETAILS: Record<string, GameDetail> = {
   [FREE_FIRE_MAX.slug]: FREE_FIRE_MAX,
   [PUBG_MOBILE.slug]: PUBG_MOBILE,
   [ROBLOX_VOUCHER.slug]: ROBLOX_VOUCHER,
+  [TARISLAND.slug]: TARISLAND,
+  [KINGDOM_THE_BLOOD.slug]: KINGDOM_THE_BLOOD,
   [POINT_BLANK.slug]: POINT_BLANK,
   [KINGS_CHOICE.slug]: KINGS_CHOICE,
+  [OCTOPATH_TRAVELER.slug]: OCTOPATH_TRAVELER,
+  [MOONLIGHT_BLADE_M.slug]: MOONLIGHT_BLADE_M,
+  [ARENA_BREAKOUT.slug]: ARENA_BREAKOUT,
+  [ARENA_OF_VALOR.slug]: ARENA_OF_VALOR,
+  ...GAME_DETAILS_2,
+  ...GAME_DETAILS_3,
+  ...GAME_DETAILS_4,
 };
 
 export function getGameDetail(slug: string): GameDetail | undefined {

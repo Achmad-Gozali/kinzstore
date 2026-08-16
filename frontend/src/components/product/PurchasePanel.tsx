@@ -175,6 +175,7 @@ function PaymentGroupRow({
 }
 
 export function PurchasePanel({ detail, children }: { detail: GameDetail; children?: React.ReactNode }) {
+  const [username, setUsername] = useState("");
   const [accountId, setAccountId] = useState("");
   const [serverId, setServerId] = useState("");
   const [selectedNominal, setSelectedNominal] = useState<NominalVariant | null>(null);
@@ -199,10 +200,18 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
   }, []);
 
   const hasAccountStep = Boolean(detail.idLabel);
+  const hasUsernameField = Boolean(detail.usernameLabel);
   const hasServerField = Boolean(detail.serverLabel);
 
+  function isAccountDataMissing() {
+    return (
+      hasAccountStep &&
+      (!accountId.trim() || (hasServerField && !serverId.trim()) || (hasUsernameField && !username.trim()))
+    );
+  }
+
   function handleSelectNominal(item: NominalVariant) {
-    if (hasAccountStep && (!accountId.trim() || (hasServerField && !serverId.trim()))) {
+    if (isAccountDataMissing()) {
       showToast("Silahkan isi data akun terlebih dahulu.");
       return;
     }
@@ -210,7 +219,7 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
   }
 
   function handleOrder() {
-    if (hasAccountStep && (!accountId.trim() || (hasServerField && !serverId.trim()))) {
+    if (isAccountDataMissing()) {
       showToast("Silahkan isi data akun terlebih dahulu.");
       return;
     }
@@ -225,6 +234,26 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
 
   let step = 0;
 
+  const usernameField = (
+    <div>
+      <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
+        {detail.usernameLabel}
+        {detail.usernameTooltip && (
+          <span title={detail.usernameTooltip}>
+            <Info className="size-3.5" />
+          </span>
+        )}
+      </label>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder={`Masukkan ${detail.usernameLabel}`}
+        className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+      />
+    </div>
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       {toast && (
@@ -238,7 +267,14 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
         <div className="flex flex-col gap-6 lg:col-span-2">
           {hasAccountStep && (
             <StepCard step={++step} title="Masukkan Data Akun">
-              <div className={cn("grid gap-4", hasServerField && "sm:grid-cols-2")}>
+              <div
+                className={cn(
+                  "grid gap-4",
+                  (hasServerField || hasUsernameField) && "sm:grid-cols-2",
+                  hasServerField && hasUsernameField && "lg:grid-cols-3"
+                )}
+              >
+                {hasUsernameField && detail.usernamePosition !== "after" && usernameField}
                 <div>
                   <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                     {detail.idLabel}
@@ -256,18 +292,34 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
                     className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
+                {hasUsernameField && detail.usernamePosition === "after" && usernameField}
                 {hasServerField && (
                   <div>
                     <label className="mb-1.5 block text-sm font-medium text-muted-foreground">
                       {detail.serverLabel}
                     </label>
-                    <input
-                      type="text"
-                      value={serverId}
-                      onChange={(e) => setServerId(e.target.value)}
-                      placeholder="Masukkan Server"
-                      className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
+                    {detail.serverOptions ? (
+                      <select
+                        value={serverId}
+                        onChange={(e) => setServerId(e.target.value)}
+                        className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      >
+                        <option value="">Pilih Server</option>
+                        {detail.serverOptions.map((option, index) => (
+                          <option key={`${option}-${index}`} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type="text"
+                        value={serverId}
+                        onChange={(e) => setServerId(e.target.value)}
+                        placeholder="Masukkan Server"
+                        className="h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      />
+                    )}
                   </div>
                 )}
               </div>
