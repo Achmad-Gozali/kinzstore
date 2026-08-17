@@ -28,7 +28,7 @@ const COLUMNS = [
   {
     title: "Legalitas",
     links: [
-      { label: "Kebijakan Pribadi", href: "/kebijakan-pribadi" },
+      { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
       { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
     ],
   },

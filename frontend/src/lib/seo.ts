@@ -1,6 +1,6 @@
 import type { GameDetail } from "@/types/game";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kinzstore.com").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kinzstore.id").replace(/\/$/, "");
 
 const MAX_DESCRIPTION_LENGTH = 160;
 

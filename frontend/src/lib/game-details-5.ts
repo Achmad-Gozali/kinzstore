@@ -176,7 +176,8 @@ const LIFE_MAKEOVER: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Life Makeover",
-  descriptionIntro: "Top up ES Points Ensemble Stars Music harga paling murah. Cara topup Ensemble Stars Music termurah :",
+  descriptionIntro:
+    "Top up Kupon Life Makeover harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Life Makeover via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis kupon masuk ke akun Anda.",
   descriptionSteps: [
     "Masukkan ID",
     "Pilih Nominal",

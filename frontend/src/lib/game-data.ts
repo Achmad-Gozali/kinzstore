@@ -36,8 +36,10 @@ const RAW_GAMES: [string, string][] = [
 ];
 
 const RAW_VOUCHERS: [string, string][] = [
-  ["Blizzard Gift Card", "webp"], ["Bstation - Voucher", "webp"], ["Crunchyroll Voucher", "webp"], ["eFootball 2023 - Voucher", "webp"], ["Garena Shell", "webp"], ["Google Play", "webp"], ["Hello Yo", "webp"], ["IMVU Voucher", "webp"],
-  ["Itunes", "webp"], ["MI Cash", "webp"], ["Nintendo Eshop", "webp"], ["PK XD Voucher", "webp"], ["Roblox Voucher", "webp"],
+  ["Blizzard Gift Card", "webp"], ["Garena Shell", "webp"], ["Google Play", "webp"], ["IMVU Voucher", "webp"],
+  ["Itunes", "webp"], ["MI Cash", "webp"], ["Nintendo Eshop", "webp"], ["Play Station (PSN Gift Card)", "webp"],
+  ["Point Blank Voucher", "webp"], ["Razer Gold", "webp"], ["Roblox Voucher", "webp"], ["Steam Wallet", "webp"],
+  ["Valorant Voucher", "webp"],
 ];
 
 const RAW_POPULAR: [string, string, string][] = [

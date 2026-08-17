@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { ComingSoonPage } from "@/components/layout/ComingSoonPage";
+import { RegisterForm } from "@/components/auth/RegisterForm";
 
 export const metadata: Metadata = {
   title: "Daftar",
-  description: "Fitur pendaftaran akun KINZSTORE akan segera hadir.",
+  description: "Daftar akun KINZSTORE untuk mulai top up game favoritmu.",
 };
 
 export default function DaftarPage() {
-  return (
-    <ComingSoonPage
-      title="Daftar"
-      description="Fitur pendaftaran akun akan segera hadir. Silakan cek kembali nanti."
-    />
-  );
+  return <RegisterForm />;
 }

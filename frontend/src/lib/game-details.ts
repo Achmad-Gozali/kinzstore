@@ -6,6 +6,7 @@ import { GAME_DETAILS_4 } from "./game-details-4";
 import { GAME_DETAILS_5 } from "./game-details-5";
 import { GAME_DETAILS_6 } from "./game-details-6";
 import { GAME_DETAILS_7 } from "./game-details-7";
+import { GAME_DETAILS_8 } from "./game-details-8";
 
 const MOBILE_LEGENDS: GameDetail = {
   slug: "mobile-legends",
@@ -852,6 +853,7 @@ const GAME_DETAILS: Record<string, GameDetail> = {
   ...GAME_DETAILS_5,
   ...GAME_DETAILS_6,
   ...GAME_DETAILS_7,
+  ...GAME_DETAILS_8,
 };
 
 export function getGameDetail(slug: string): GameDetail | undefined {
