@@ -145,23 +145,4 @@
       hsl(212.31 50% 12%) 100%
     );
   }
-  .bg-popular-background {
-    position: relative;
-    overflow: hidden;
-    background-color: hsl(212.31 48.15% 19.5%);
-    border: 1px solid hsl(0 0% 100% / 0.14);
-  }
-  .bg-popular-background::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-      -55deg,
-      hsl(0 0% 100% / 0.14) 0px,
-      hsl(0 0% 100% / 0.14) 14px,
-      transparent 14px,
-      transparent 34px
-    );
-  }
 }

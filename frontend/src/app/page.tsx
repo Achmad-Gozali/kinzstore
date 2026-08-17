@@ -46,7 +46,7 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
           <li key={item.slug} className="relative">
             <Link
               href={`/${item.slug}`}
-              className="bg-popular-background flex items-center gap-x-2 rounded-[16px] text-foreground duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3"
+              className="flex items-center gap-x-2 rounded-[16px] bg-muted text-foreground duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3"
             >
               <div className="group flex items-center gap-3 p-2">
                 <Image
