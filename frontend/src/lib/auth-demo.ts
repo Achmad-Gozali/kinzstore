@@ -21,3 +21,9 @@ export function setDemoSession() {
 export function clearDemoSession() {
   document.cookie = `${DEMO_SESSION_COOKIE}=; path=/; max-age=0; samesite=lax`;
 }
+
+/** Hanya dipanggil dari client (browser) — cek status login demo, bukan cuma halaman aktif. */
+export function hasDemoSession(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split("; ").some((c) => c.startsWith(`${DEMO_SESSION_COOKIE}=`));
+}

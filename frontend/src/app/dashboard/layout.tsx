@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="relative bg-gradient-theme pb-20 sm:pb-28 md:pb-36">
-      <div className="container mx-auto flex flex-col gap-8 px-4 py-8 lg:flex-row">
+      <div className="container mx-auto flex flex-col gap-4 px-4 py-8 sm:flex-row sm:gap-6 md:gap-8">
         <DashboardSidebar />
         <div className="min-w-0 flex-1">{children}</div>
       </div>

@@ -42,21 +42,21 @@ const RAW_VOUCHERS: [string, string][] = [
   ["Valorant Voucher", "webp"],
 ];
 
-const RAW_POPULAR: [string, string, string][] = [
-  ["Mobile Legends", "Moonton", "webp"],
-  ["Free Fire", "Garena", "webp"],
-  ["Magic Chess : Go Go", "Vizta Games", "webp"],
-  ["Free Fire MAX", "Garena", "jpg"],
-  ["PUBG Mobile", "Tencent Games", "webp"],
-  ["Point Blank", "Zepetto", "webp"],
-  ["Kings Choice", "ONEMT", "webp"],
-  ["Roblox Voucher", "Roblox Corporation", "webp"],
+const RAW_POPULAR: [string, string, string, "games" | "vouchers"][] = [
+  ["Mobile Legends", "Moonton", "webp", "games"],
+  ["Free Fire", "Garena", "webp", "games"],
+  ["Magic Chess : Go Go", "Vizta Games", "webp", "games"],
+  ["Free Fire MAX", "Garena", "jpg", "games"],
+  ["PUBG Mobile", "Tencent Games", "webp", "games"],
+  ["Point Blank", "Zepetto", "webp", "games"],
+  ["Kings Choice", "ONEMT", "webp", "games"],
+  ["Roblox Voucher", "Roblox Corporation", "webp", "vouchers"],
 ];
 
 export const GAMES: GameItem[] = RAW_GAMES.map(([name, ext]) => toGame(name, ext, "games"));
 export const VOUCHERS: GameItem[] = RAW_VOUCHERS.map(([name, ext]) => toGame(name, ext, "vouchers"));
-export const POPULAR: PopularItem[] = RAW_POPULAR.map(([name, publisher, ext]) => ({
-  ...toGame(name, ext, "games"),
+export const POPULAR: PopularItem[] = RAW_POPULAR.map(([name, publisher, ext, dir]) => ({
+  ...toGame(name, ext, dir),
   publisher,
 }));
 
