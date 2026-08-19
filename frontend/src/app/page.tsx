@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GAMES, VOUCHERS, POPULAR, HERO_SRC, WHATSAPP_NUMBER } from "@/lib/game-data";
+import { GAMES, VOUCHERS, POPULAR, HERO_BANNERS, WHATSAPP_NUMBER } from "@/lib/game-data";
 import { GameCard } from "@/components/ui/GameCard";
 import { WhatsAppIcon } from "@/components/layout/icons";
+import { HeroCarousel } from "@/components/layout/HeroCarousel";
 
 const PAGE_SIZE = 18;
 const VOUCHER_POPULAR = POPULAR.filter((p) => p.name === "Roblox Voucher");
@@ -14,16 +15,8 @@ function HeroBanner() {
   return (
     <section className="relative flex items-center overflow-hidden bg-secondary/50 px-4 py-4 lg:min-h-[554px] lg:py-8">
       <div className="container mx-auto">
-        <div className="relative aspect-[1080/424] h-full overflow-hidden rounded-lg">
-          <Image
-            src={HERO_SRC}
-            alt="KINZSTORE - TopUp Games"
-            fill
-            sizes="(min-width: 1280px) 1280px, 100vw"
-            className="object-cover"
-            priority
-            fetchPriority="high"
-          />
+        <div className="relative aspect-[1080/424] h-full">
+          <HeroCarousel banners={HERO_BANNERS} />
         </div>
       </div>
     </section>
@@ -46,7 +39,7 @@ function PopularSection({ items }: { items: typeof POPULAR }) {
           <li key={item.slug} className="relative">
             <Link
               href={`/${item.slug}`}
-              className="flex items-center gap-x-2 rounded-[16px] bg-muted text-foreground duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3"
+              className="relative flex items-center gap-x-2 rounded-[16px] border border-primary/20 bg-gradient-to-b from-card to-muted text-foreground shadow-sm transition-all duration-300 ease-in-out hover:z-10 hover:scale-[1.02] hover:border-primary/70 hover:shadow-lg hover:shadow-primary/20 md:gap-x-3"
             >
               <div className="group flex items-center gap-3 p-2">
                 <Image
@@ -162,7 +155,7 @@ export default function Home() {
   return (
     <>
       <main className="relative bg-gradient-theme pb-20 sm:pb-28 md:pb-36">
-        <h1 className="sr-only">KINZSTORE - Top Up Game Online Termurah</h1>
+        <h1 className="sr-only">ALIGO - Top Up Game Online Termurah</h1>
         <HeroBanner />
         <div className="pt-8">
           <TopUpGamesSection />

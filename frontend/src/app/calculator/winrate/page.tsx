@@ -71,7 +71,7 @@ export default function WinrateCalculatorPage() {
     <main className="relative bg-gradient-theme pb-20 sm:pb-28 md:pb-36">
       <div className="mx-auto w-full max-w-xl space-y-8 px-4 pb-24 pt-16 sm:pb-48 sm:pt-24">
         <div>
-          <Image src={LOGO_SRC} alt="KINZSTORE" width={180} height={120} className="mx-auto h-24 w-auto sm:h-32" />
+          <Image src={LOGO_SRC} alt="ALIGO" width={180} height={120} className="mx-auto h-24 w-auto sm:h-32" />
           <h1 className="mt-2 text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             Kalkulator Win Rate
           </h1>

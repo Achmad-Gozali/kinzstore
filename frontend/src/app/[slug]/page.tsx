@@ -4,9 +4,8 @@ import Image from "next/image";
 import { GAMES, VOUCHERS } from "@/lib/game-data";
 import { getGameDetail } from "@/lib/game-details";
 import { buildGameMetaDescription, getCheapestPrice, SITE_URL } from "@/lib/seo";
-import { ProductHero } from "@/components/product/ProductHero";
 import { PurchasePanel } from "@/components/product/PurchasePanel";
-import { DescriptionSection } from "@/components/product/DescriptionSection";
+import { ProductHero, DescriptionSection } from "@/components/product/ProductSections";
 
 const ALL_ITEMS = [...GAMES, ...VOUCHERS];
 
@@ -31,7 +30,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${title} - KINZSTORE`,
+      title: `${title} - ALIGO`,
       description,
       url,
       images: [{ url: item.image }],

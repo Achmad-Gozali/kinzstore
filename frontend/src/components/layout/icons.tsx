@@ -113,15 +113,6 @@ export function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-export function YoutubeIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <rect x="2" y="2" width="20" height="20" rx="6" fill="#ff0000" />
-      <path d="M10 8.5l6 3.5-6 3.5v-7z" fill="#fff" />
-    </svg>
-  );
-}
-
 export function FacebookIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

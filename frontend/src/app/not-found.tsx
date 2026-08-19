@@ -3,7 +3,7 @@ import { ComingSoonPage } from "@/components/layout/ComingSoonPage";
 
 export const metadata: Metadata = {
   title: "Halaman Tidak Ditemukan",
-  description: "Halaman yang kamu cari tidak ditemukan di KINZSTORE.",
+  description: "Halaman yang kamu cari tidak ditemukan di ALIGO.",
 };
 
 export default function NotFound() {

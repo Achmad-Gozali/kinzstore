@@ -324,7 +324,7 @@ const SCROLL_OF_ONMYOJI_SAKURA_SWORD: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Scroll of Onmyoji Sakura Sword",
   descriptionIntro:
-    "Top up gioks Scroll of Onmyoji : Sakura & Sword harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Scroll of Onmyoji : Sakura & Swordvia ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis gioks masuk ke akun Anda.",
+    "Top up gioks Scroll of Onmyoji : Sakura & Sword harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Scroll of Onmyoji : Sakura & Swordvia ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis gioks masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -362,7 +362,7 @@ const SPEED_DRIFTERS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Speed Drifters",
   descriptionIntro:
-    "Top up diamond Speed Drifters harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Speed Drifters via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up diamond Speed Drifters harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Speed Drifters via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -436,7 +436,7 @@ const STORMSHOT: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Stormshot",
   descriptionIntro:
-    "Top up Stormshot diamond Stormshot harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Stormshot via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up Stormshot diamond Stormshot harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Stormshot via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -480,7 +480,7 @@ const SUPER_SUS: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Super SUS",
-  descriptionIntro: "Top up Golden Star Super SUS harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Golden Star Super SUS harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -602,7 +602,7 @@ const TOWER_BRAWL: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Tower Brawl",
-  descriptionIntro: "Top up diamonds Tower Brawl harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up diamonds Tower Brawl harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -761,7 +761,7 @@ const WEREWOLF_PARTY_GAME: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Werewolf (Party Game)",
   descriptionIntro:
-    "Top up diamond Werewolf Party Game harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Werewolf Party Game via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up diamond Werewolf Party Game harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Werewolf Party Game via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -813,7 +813,7 @@ const ZEPETO: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Zepeto",
   descriptionIntro:
-    "Top up zems & coin Zepeto harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Zepeto via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis zems / coin masuk ke akun Anda.",
+    "Top up zems & coin Zepeto harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Zepeto via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis zems / coin masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",

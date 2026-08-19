@@ -55,7 +55,7 @@ export function Footer() {
           <div>
             <Image
               src={LOGO_SRC}
-              alt="Kinzstore"
+              alt="ALIGO"
               width={180}
               height={120}
               sizes="96px"
@@ -107,7 +107,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border/20">
         <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-foreground/80">
-          <span className="text-foreground">&copy; 2026 KINZSTORE. All rights reserved.</span>
+          <span className="text-foreground">&copy; 2026 ALIGO. All rights reserved.</span>
           <button type="button" aria-label="Toggle theme" className="rounded-md p-1.5 hover:bg-accent/50">
             <Moon className="size-4" />
           </button>

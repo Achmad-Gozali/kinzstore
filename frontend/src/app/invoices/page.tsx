@@ -76,7 +76,7 @@ export default function InvoicesPage() {
       <div className="container mx-auto flex flex-col items-center gap-1 px-4 pb-16 text-center">
         <h2 className="text-2xl font-bold">Transaksi Real-Time</h2>
         <p className="mb-6 text-sm text-muted-foreground">
-          Berikut ini Real-Time data pesanan masuk terbaru KINZSTORE.
+          Berikut ini Real-Time data pesanan masuk terbaru ALIGO.
         </p>
 
         <div className="-mx-4 w-full overflow-x-auto ring-1 ring-muted sm:mx-0 sm:rounded-lg">

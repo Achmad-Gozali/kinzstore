@@ -29,7 +29,7 @@ const HATSUNE_MIKU_COLORFUL_STAGE: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Hatsune Miku : Colorful Stage",
   descriptionIntro:
-    "Top up Hatsune Miku : Colorful Stage harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Hatsune Miku : Colorful Stage harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -171,7 +171,7 @@ const HONOR_OF_KINGS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Honor of Kings",
   descriptionIntro:
-    "Top up token Honor of Kings Global harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Honor of Kings via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis tokens masuk ke akun Anda.",
+    "Top up token Honor of Kings Global harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Honor of Kings via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis tokens masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -448,7 +448,7 @@ const KING_OF_AVALON: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi King of Avalon",
   descriptionIntro:
-    "Top up King of Avalon diamond harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup King of Avalon via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up King of Avalon diamond harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup King of Avalon via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",

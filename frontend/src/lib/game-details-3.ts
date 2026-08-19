@@ -163,7 +163,7 @@ const FARLIGHT84: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Farlight84",
   descriptionIntro:
-    "Top up diamond Farlight 84 harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Farlight 84 via ID termurah cukup dengan memasukkan ID & Server dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up diamond Farlight 84 harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Farlight 84 via ID termurah cukup dengan memasukkan ID & Server dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -210,7 +210,7 @@ const FC_MOBILE: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi FC Mobile",
   descriptionIntro:
-    "Top up FC Mobile harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.com. Cara topup FC Mobile via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis points masuk ke akun Anda.",
+    "Top up FC Mobile harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.ID. Cara topup FC Mobile via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis points masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -405,7 +405,7 @@ const GROWTOPIA: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Growtopia",
   descriptionIntro:
-    "Top up gems Growtopia harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up gems Growtopia harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -447,7 +447,7 @@ const GUNS_OF_GLORY: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Guns of Glory",
   descriptionIntro:
-    "Top up Guns of Glory diamond harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Guns of Glory via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up Guns of Glory diamond harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Guns of Glory via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",

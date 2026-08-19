@@ -83,7 +83,7 @@ const LEGACY_FATE_SACRED_FEARLESS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Legacy Fate Sacred Fearless",
   descriptionIntro:
-    "Top up Token Legacy Fate : Sacred & Farless harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Token Legacy Fate : Sacred & Farless harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -177,7 +177,7 @@ const LIFE_MAKEOVER: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Life Makeover",
   descriptionIntro:
-    "Top up Kupon Life Makeover harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Life Makeover via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis kupon masuk ke akun Anda.",
+    "Top up Kupon Life Makeover harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Life Makeover via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis kupon masuk ke akun Anda.",
   descriptionSteps: [
     "Masukkan ID",
     "Pilih Nominal",
@@ -308,7 +308,7 @@ const LOVE_AND_DEEPSPACE: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Love and Deepspace",
   descriptionIntro:
-    "Top up Love and Deepspace harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Love and Deepspace harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",
@@ -429,7 +429,7 @@ const MAPLESTORY_R_EVOLUTION: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Maplestory R Evolution",
   descriptionIntro:
-    "Top up colored diamonds MapleStory R : Evolution harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up colored diamonds MapleStory R : Evolution harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",

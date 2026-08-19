@@ -7,7 +7,7 @@ const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const metadata: Metadata = {
   title: "Kebijakan Privasi",
-  description: "Kebijakan privasi KINZSTORE — data apa saja yang kami kumpulkan, cara kami menggunakannya, dan hak kamu atas data tersebut.",
+  description: "Kebijakan privasi ALIGO — data apa saja yang kami kumpulkan, cara kami menggunakannya, dan hak kamu atas data tersebut.",
 };
 
 export default function KebijakanPrivasiPage() {
@@ -15,7 +15,7 @@ export default function KebijakanPrivasiPage() {
     <LegalPageLayout
       title="Kebijakan Privasi"
       lastUpdated="17 Agustus 2026"
-      intro="KINZSTORE menghargai privasi setiap pengguna. Kebijakan ini menjelaskan data apa saja yang kami kumpulkan saat kamu menggunakan layanan top up game dan voucher digital di KINZSTORE, bagaimana data itu digunakan, dan hak yang kamu miliki atas data tersebut."
+      intro="ALIGO menghargai privasi setiap pengguna. Kebijakan ini menjelaskan data apa saja yang kami kumpulkan saat kamu menggunakan layanan top up game dan voucher digital di ALIGO, bagaimana data itu digunakan, dan hak yang kamu miliki atas data tersebut."
       sections={[
         {
           heading: "1. Data yang Kami Kumpulkan",
@@ -49,7 +49,7 @@ export default function KebijakanPrivasiPage() {
               <ul className="list-disc space-y-1.5 pl-5">
                 <li>Memproses pesanan top up game atau voucher digital ke akun/ID yang kamu masukkan.</li>
                 <li>Menghubungi kamu melalui WhatsApp atau Email terkait status pesanan, apabila diperlukan.</li>
-                <li>Mengelola akun kamu di KINZSTORE, termasuk proses masuk (login) di kemudian hari.</li>
+                <li>Mengelola akun kamu di ALIGO, termasuk proses masuk (login) di kemudian hari.</li>
                 <li>Meningkatkan kualitas layanan dan mengatasi kendala teknis.</li>
               </ul>
             </>
@@ -62,7 +62,7 @@ export default function KebijakanPrivasiPage() {
               Kami berupaya menjaga kerahasiaan dan keamanan data kamu dengan langkah-langkah yang wajar sesuai
               praktik umum industri. Kata sandi akun tidak pernah disimpan dalam bentuk teks biasa. Meski demikian,
               tidak ada sistem penyimpanan data yang sepenuhnya bebas risiko — kami akan terus berupaya meningkatkan
-              standar keamanan seiring berkembangnya layanan KINZSTORE.
+              standar keamanan seiring berkembangnya layanan ALIGO.
             </p>
           ),
         },
@@ -70,7 +70,7 @@ export default function KebijakanPrivasiPage() {
           heading: "4. Berbagi Data ke Pihak Ketiga",
           body: (
             <p>
-              KINZSTORE tidak menjual atau membagikan data pribadimu kepada pihak ketiga untuk tujuan pemasaran. Data
+              ALIGO tidak menjual atau membagikan data pribadimu kepada pihak ketiga untuk tujuan pemasaran. Data
               hanya dapat dibagikan kepada penyedia layanan yang benar-benar diperlukan untuk menjalankan transaksi
               (misalnya penyedia layanan pembayaran, apabila sudah diimplementasikan), dan hanya sebatas data yang
               diperlukan untuk menyelesaikan transaksi tersebut.
@@ -95,7 +95,7 @@ export default function KebijakanPrivasiPage() {
           heading: "6. Perubahan Kebijakan",
           body: (
             <p>
-              Kebijakan privasi ini dapat diperbarui sewaktu-waktu mengikuti perkembangan layanan KINZSTORE. Perubahan
+              Kebijakan privasi ini dapat diperbarui sewaktu-waktu mengikuti perkembangan layanan ALIGO. Perubahan
               akan tercermin pada tanggal &ldquo;Terakhir diperbarui&rdquo; di bagian atas halaman ini.
             </p>
           ),

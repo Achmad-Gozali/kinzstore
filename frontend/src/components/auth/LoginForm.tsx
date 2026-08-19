@@ -3,15 +3,19 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Eye, EyeOff, CircleAlert, LogIn } from "lucide-react";
 import { LOGO_SRC } from "@/lib/game-data";
+import { DEMO_USERNAME, DEMO_PASSWORD, setDemoSession } from "@/lib/auth-demo";
 
 const INPUT_CLASS =
   "h-10 w-full rounded-lg border border-muted-foreground/10 bg-input/80 px-3 text-sm text-foreground placeholder:text-muted-foreground/75 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
 
 export function LoginForm() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [formError, setFormError] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function showToast(message: string) {
@@ -20,9 +24,24 @@ export function LoginForm() {
     toastTimer.current = setTimeout(() => setToast(null), 3000);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  // TODO DEMO SEMENTARA: validasi kredensial hardcode di client (lihat
+  // src/lib/auth-demo.ts). Ganti dengan pemanggilan endpoint login sungguhan
+  // (verifikasi di server, cookie session httpOnly) sebelum go-live production.
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    showToast("Fitur login akan segera hadir.");
+    setFormError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const identifier = String(formData.get("identifier") ?? "").trim();
+    const password = String(formData.get("password") ?? "");
+
+    if (identifier === DEMO_USERNAME && password === DEMO_PASSWORD) {
+      setDemoSession();
+      router.push("/dashboard");
+      return;
+    }
+
+    setFormError("Username atau password salah.");
   }
 
   return (
@@ -35,7 +54,7 @@ export function LoginForm() {
       )}
 
       <Link href="/">
-        <Image src={LOGO_SRC} alt="KINZSTORE" width={180} height={120} sizes="130px" className="h-20 w-auto" />
+        <Image src={LOGO_SRC} alt="ALIGO" width={180} height={120} sizes="130px" className="h-20 w-auto" />
       </Link>
 
       <div className="w-full max-w-md rounded-3xl bg-background p-6 text-left shadow-md sm:p-8">
@@ -89,6 +108,13 @@ export function LoginForm() {
               Lupa kata sandi?
             </button>
           </div>
+
+          {formError && (
+            <p role="alert" className="flex items-center gap-1.5 text-sm font-medium text-destructive">
+              <CircleAlert className="size-4 shrink-0" />
+              {formError}
+            </p>
+          )}
 
           <button
             type="submit"

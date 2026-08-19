@@ -5,7 +5,7 @@ import { LOGO_SRC } from "@/lib/game-data";
 export function ComingSoonPage({ title, description }: { title: string; description?: string }) {
   return (
     <main className="relative flex min-h-screen flex-1 flex-col items-center justify-center gap-4 bg-gradient-theme px-4 text-center">
-      <Image src={LOGO_SRC} alt="KINZSTORE" width={180} height={120} sizes="130px" className="h-20 w-auto" />
+      <Image src={LOGO_SRC} alt="ALIGO" width={180} height={120} sizes="130px" className="h-20 w-auto" />
       <h1 className="text-2xl font-bold text-foreground sm:text-3xl">{title}</h1>
       <p className="max-w-md text-sm text-muted-foreground">
         {description ?? "Fitur ini akan segera hadir. Silakan cek kembali nanti."}

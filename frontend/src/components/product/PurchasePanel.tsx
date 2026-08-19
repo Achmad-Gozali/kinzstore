@@ -20,16 +20,16 @@ function StepCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl bg-card/40 ring-1 ring-border/40">
-      <div className="flex items-stretch">
+    <div className="overflow-hidden rounded-xl ring-1 ring-border/40">
+      <div className="flex items-stretch bg-card">
         <div className="flex w-9 shrink-0 items-center justify-center bg-primary text-sm font-bold text-primary-foreground">
           {step}
         </div>
-        <h2 className="flex flex-1 items-center bg-muted/60 px-4 py-2.5 text-sm font-semibold uppercase tracking-wide">
+        <h2 className="flex flex-1 items-center px-4 py-2.5 text-sm font-semibold uppercase tracking-wide">
           {title}
         </h2>
       </div>
-      <div className="bg-secondary/30 p-4">{children}</div>
+      <div className="bg-card/50 p-4">{children}</div>
     </div>
   );
 }
@@ -49,28 +49,28 @@ function NominalCard({
       type="button"
       onClick={onSelect}
       className={cn(
-        "group flex flex-col justify-between rounded-lg bg-card/60 text-left ring-1 ring-transparent transition hover:ring-primary",
+        "group relative flex min-h-[85px] flex-col justify-between overflow-hidden rounded-xl bg-background text-left shadow-sm ring-1 ring-transparent transition hover:ring-primary",
         selected && "ring-2 ring-primary"
       )}
     >
-      <div className="p-3">
-        <p className="line-clamp-2 text-sm font-semibold">{item.name}</p>
-        <p className="mt-2 flex items-center gap-1.5 text-sm font-bold text-primary">
-          {iconSrc && <Image src={iconSrc} alt="" width={16} height={16} className="size-4" />} Rp{" "}
-          {formatIDR(item.price)}
+      {item.note && (
+        <span title={item.note} className="absolute bottom-10 right-1.5 text-muted-foreground">
+          <Info className="size-4" />
+        </span>
+      )}
+      <div className="flex flex-col gap-1 p-3">
+        <p className="line-clamp-2 text-xs font-semibold">{item.name}</p>
+        <p className="flex items-center gap-2 text-sm font-semibold text-primary md:gap-3 md:text-base">
+          {iconSrc && (
+            <Image src={iconSrc} alt="" width={32} height={32} className="aspect-square w-6 md:w-8" />
+          )}
+          Rp {formatIDR(item.price)}
         </p>
       </div>
-      <div className="flex items-center justify-between border-t border-border/30 px-3 py-1.5">
-        {item.instant ? (
-          <span className="inline-flex items-center gap-1 rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold uppercase text-muted-foreground">
-            <Zap className="size-3" /> Pengiriman Instan
-          </span>
-        ) : (
-          <span />
-        )}
-        {item.note && (
-          <span title={item.note} className="text-muted-foreground">
-            <Info className="size-3.5" />
+      <div className="flex items-center justify-end gap-1 rounded-b-xl bg-gradient-to-b from-muted to-muted/40 p-2">
+        {item.instant && (
+          <span className="inline-flex items-center gap-1 rounded bg-white px-1.5 py-1 text-[7px] font-bold uppercase leading-none tracking-tight text-slate-700">
+            <Zap className="size-2.5" /> Pengiriman Instan
           </span>
         )}
       </div>
@@ -332,11 +332,11 @@ export function PurchasePanel({ detail, children }: { detail: GameDetail; childr
             <div className="flex flex-col gap-6">
               {detail.categories.map((category) => (
                 <div key={category.label}>
-                  <h3 className="mb-3 text-sm font-semibold">
+                  <h3 className="mb-4 text-sm font-semibold">
                     {category.emoji}
                     {category.label}
                   </h3>
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
                     {category.items.map((item) => (
                       <NominalCard
                         key={item.id}

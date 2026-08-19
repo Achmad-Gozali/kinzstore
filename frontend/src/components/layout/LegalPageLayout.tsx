@@ -28,7 +28,7 @@ export function LegalPageLayout({
         <div className="mt-8 flex items-start gap-2.5 rounded-xl bg-secondary/30 p-4 text-xs leading-relaxed text-muted-foreground ring-1 ring-border/40">
           <Info className="mt-0.5 size-4 shrink-0" />
           <p>
-            Dokumen ini adalah draf awal yang disusun secara umum untuk kebutuhan operasional KINZSTORE dan bukan
+            Dokumen ini adalah draf awal yang disusun secara umum untuk kebutuhan operasional ALIGO dan bukan
             merupakan nasihat hukum profesional. Pemilik website disarankan untuk meninjau ulang atau berkonsultasi
             dengan pihak legal sebelum situs ini benar-benar digunakan secara produksi.
           </p>

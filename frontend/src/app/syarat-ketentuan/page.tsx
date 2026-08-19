@@ -7,7 +7,7 @@ const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const metadata: Metadata = {
   title: "Syarat & Ketentuan",
-  description: "Syarat & ketentuan penggunaan layanan top up game dan voucher digital KINZSTORE.",
+  description: "Syarat & ketentuan penggunaan layanan top up game dan voucher digital ALIGO.",
 };
 
 export default function SyaratKetentuanPage() {
@@ -15,13 +15,13 @@ export default function SyaratKetentuanPage() {
     <LegalPageLayout
       title="Syarat & Ketentuan"
       lastUpdated="17 Agustus 2026"
-      intro="Dengan menggunakan layanan KINZSTORE, kamu dianggap telah membaca, memahami, dan menyetujui syarat & ketentuan berikut. Mohon dibaca dengan saksama sebelum melakukan transaksi."
+      intro="Dengan menggunakan layanan ALIGO, kamu dianggap telah membaca, memahami, dan menyetujui syarat & ketentuan berikut. Mohon dibaca dengan saksama sebelum melakukan transaksi."
       sections={[
         {
           heading: "1. Definisi Layanan",
           body: (
             <p>
-              KINZSTORE adalah platform online yang menyediakan layanan top up (isi ulang) item dalam game dan
+              ALIGO adalah platform online yang menyediakan layanan top up (isi ulang) item dalam game dan
               penjualan voucher digital, seperti diamond, UC, voucher gift card, dan produk digital sejenis. Layanan
               disediakan untuk berbagai game dan penyedia voucher yang terdaftar di situs ini.
             </p>
@@ -37,7 +37,7 @@ export default function SyaratKetentuanPage() {
               </li>
               <li>Pengguna wajib berusia cukup untuk memiliki dan mengelola akun game/voucher yang di-top up.</li>
               <li>
-                Akun yang didaftarkan di KINZSTORE (Nama Lengkap, Username, Alamat Email, No. WhatsApp, Kata Sandi)
+                Akun yang didaftarkan di ALIGO (Nama Lengkap, Username, Alamat Email, No. WhatsApp, Kata Sandi)
                 harus diisi dengan data yang valid dan menjadi tanggung jawab pemilik akun untuk menjaga
                 kerahasiaan kata sandinya.
               </li>
@@ -62,9 +62,9 @@ export default function SyaratKetentuanPage() {
             <p>
               Karena sifat produk digital yang langsung diproses setelah pembayaran dikonfirmasi, pesanan yang telah
               berhasil masuk ke akun/ID tujuan bersifat final dan tidak dapat dikembalikan (non-refundable). Refund
-              hanya dapat dipertimbangkan apabila terjadi kesalahan yang murni berasal dari sistem KINZSTORE (misalnya
+              hanya dapat dipertimbangkan apabila terjadi kesalahan yang murni berasal dari sistem ALIGO (misalnya
               item tidak masuk meskipun pembayaran telah dikonfirmasi berhasil dan data yang dimasukkan pengguna sudah
-              benar). Kesalahan input data oleh pengguna (ID/Server yang salah, dsb.) bukan tanggung jawab KINZSTORE
+              benar). Kesalahan input data oleh pengguna (ID/Server yang salah, dsb.) bukan tanggung jawab ALIGO
               dan tidak dapat direfund.
             </p>
           ),
@@ -74,11 +74,11 @@ export default function SyaratKetentuanPage() {
           body: (
             <ul className="list-disc space-y-1.5 pl-5">
               <li>
-                KINZSTORE tidak bertanggung jawab atas kegagalan transaksi yang disebabkan oleh kesalahan data yang
+                ALIGO tidak bertanggung jawab atas kegagalan transaksi yang disebabkan oleh kesalahan data yang
                 dimasukkan pengguna (ID, Server, Email, No. WhatsApp yang tidak sesuai).
               </li>
               <li>
-                KINZSTORE tidak bertanggung jawab atas gangguan yang berasal dari pihak ketiga di luar kendali kami,
+                ALIGO tidak bertanggung jawab atas gangguan yang berasal dari pihak ketiga di luar kendali kami,
                 termasuk gangguan pada server penyedia game/voucher atau penyedia metode pembayaran.
               </li>
               <li>
@@ -92,7 +92,7 @@ export default function SyaratKetentuanPage() {
           heading: "6. Perubahan Ketentuan",
           body: (
             <p>
-              KINZSTORE berhak mengubah, menambah, atau memperbarui syarat & ketentuan ini sewaktu-waktu tanpa
+              ALIGO berhak mengubah, menambah, atau memperbarui syarat & ketentuan ini sewaktu-waktu tanpa
               pemberitahuan sebelumnya. Perubahan akan berlaku sejak dipublikasikan di halaman ini, dengan tanggal
               &ldquo;Terakhir diperbarui&rdquo; yang diperbarui sesuai.
             </p>

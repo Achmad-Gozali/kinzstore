@@ -103,7 +103,7 @@ const MISTY_CONTINENT: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Misty Continent",
   descriptionIntro:
-    "Top up Misty Continent diamond harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Misty Continent via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up Misty Continent diamond harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Misty Continent via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -404,7 +404,7 @@ const PHANTASY_STAR_ONLINE_2_NEW_GENESIS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Phantasy Star Online 2 : New Genesis",
   descriptionIntro:
-    "Top up Phantasy Star Online 2 : New Genesis harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Phantasy Star Online 2 : New Genesis harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Masukkan Data Akun",
     "Pilih Nominal",
@@ -540,7 +540,7 @@ const PUNISHING_GRAY_RAVEN: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Punishing Gray Raven",
   descriptionIntro:
-    "Top up Rainbow Cards Punishing : Gray Raven harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Punishing : Gray Raven via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis Rainbow Cards masuk ke akun Anda.",
+    "Top up Rainbow Cards Punishing : Gray Raven harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Punishing : Gray Raven via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis Rainbow Cards masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -663,7 +663,7 @@ const PIXEL_GUN_3D: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Pixel Gun 3D",
-  descriptionIntro: "Top up Pixel Gun 3D harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Pixel Gun 3D harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",

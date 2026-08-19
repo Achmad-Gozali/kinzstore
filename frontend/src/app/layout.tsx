@@ -13,8 +13,8 @@ const ibmPlexSansCondensed = IBM_Plex_Sans_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "KINZSTORE - TopUp Game Termurah",
-    template: "%s - KINZSTORE",
+    default: "ALIGO - TopUp Game Termurah",
+    template: "%s - ALIGO",
   },
   description:
     "Suplier TopUp Game Online termurah, Proses cepat serta open 24 Jam dengan metode pembayaran terlengkap di Indonesia",

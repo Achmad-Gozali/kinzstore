@@ -226,7 +226,7 @@ const MAGIC_CHESS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Magic Chess : Go Go",
   descriptionIntro:
-    "Top up Diamond Magic Chess : Go Go harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Diamond Magic Chess : Go Go harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -236,7 +236,7 @@ const MAGIC_CHESS: GameDetail = {
     "5) Masukkan Kode Promo (jika ada)",
     "6) Isi Detail Kontak",
     "7) Klik Pesan Sekarang dan lakukan Pembayaran",
-    "8) Selesai harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "8) Selesai harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   ],
 };
 
@@ -445,7 +445,7 @@ const ROBLOX_VOUCHER: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Roblox Voucher",
-  descriptionIntro: "Top up Roblox harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Roblox harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara beli voucher :",
     "1) Tentukan Jumlah Pembelian",
@@ -484,7 +484,7 @@ const POINT_BLANK: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Point Blank",
-  descriptionIntro: "Top up PB cash Point Blank harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up PB cash Point Blank harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -536,7 +536,7 @@ const KINGS_CHOICE: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Kings Choice",
   descriptionIntro:
-    "Top up token King Choice harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup KC via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up token King Choice harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup KC via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -572,7 +572,7 @@ const OCTOPATH_TRAVELER: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Octopath Traveler CotC",
   descriptionIntro:
-    "Top up Ruby Octopath Traveler : CotC harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up Ruby Octopath Traveler : CotC harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -636,7 +636,7 @@ const MOONLIGHT_BLADE_M: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Moonlight Blade M",
-  descriptionIntro: "Top up Paket Moonlight Blade M harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Paket Moonlight Blade M harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -675,7 +675,7 @@ const KINGDOM_THE_BLOOD: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Kingdom The Blood",
-  descriptionIntro: "Top up Gold Kingdom: The Blood harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Gold Kingdom: The Blood harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -726,7 +726,7 @@ const TARISLAND: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Tarisland",
-  descriptionIntro: "Top up crystals TARISLAND harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up crystals TARISLAND harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Pilih Nominal",
@@ -777,7 +777,7 @@ const ARENA_BREAKOUT: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Arena Breakout",
   descriptionIntro:
-    "Top up bond Arena Breakout harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+    "Top up bond Arena Breakout harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: [
     "Cara topup :",
     "1) Masukkan Data Akun",

@@ -36,7 +36,7 @@ const BLIZZARD_GIFT_CARD: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Blizzard Gift Card",
-  descriptionIntro: "Top up Blizzard Gift Card harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Blizzard Gift Card harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -61,7 +61,7 @@ const GARENA_SHELL: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Garena Shell",
-  descriptionIntro: "Top up Garena Shell harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Garena Shell harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -90,7 +90,7 @@ const GOOGLE_PLAY: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Google Play",
-  descriptionIntro: "Top up Google Play harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Google Play harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -114,7 +114,7 @@ const IMVU_VOUCHER: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi IMVU Voucher",
-  descriptionIntro: "Top up IMVU Voucher harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up IMVU Voucher harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -144,7 +144,7 @@ const ITUNES: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Itunes",
-  descriptionIntro: "Top up Itunes harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Itunes harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -171,7 +171,7 @@ const MI_CASH: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi MI Cash",
-  descriptionIntro: "Top up MI Cash harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up MI Cash harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -195,7 +195,7 @@ const NINTENDO_ESHOP: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Nintendo Eshop",
-  descriptionIntro: "Top up Nintendo Eshop harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Nintendo Eshop harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -225,7 +225,7 @@ const PLAYSTATION_GIFT_CARD: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Play Station (PSN Gift Card)",
-  descriptionIntro: "Top up Play Station (PSN Gift Card) harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Play Station (PSN Gift Card) harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -253,7 +253,7 @@ const POINT_BLANK_VOUCHER: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Point Blank Voucher",
-  descriptionIntro: "Top up Point Blank Voucher harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Point Blank Voucher harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -280,7 +280,7 @@ const RAZER_GOLD: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Razer Gold",
-  descriptionIntro: "Top up Razer Gold harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Razer Gold harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -309,7 +309,7 @@ const STEAM_WALLET: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Steam Wallet",
-  descriptionIntro: "Top up Steam Wallet harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Steam Wallet harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 
@@ -338,7 +338,7 @@ const VALORANT_VOUCHER: GameDetail = {
   ],
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Valorant Voucher",
-  descriptionIntro: "Top up Valorant Voucher harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore.",
+  descriptionIntro: "Top up Valorant Voucher harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO.",
   descriptionSteps: voucherSteps(),
 };
 

@@ -214,7 +214,7 @@ const BLOOD_STRIKE: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Blood Strike",
   descriptionIntro:
-    "Top up Blood Strike harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Blood Strike via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up Blood Strike harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Blood Strike via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",
@@ -474,7 +474,7 @@ const DAYBREAK_LEGENDS: GameDetail = {
   paymentGroups: createPaymentGroups(),
   descriptionTitle: "Deskripsi Daybreak Legends",
   descriptionIntro:
-    "Top up diamond Daybreak Legends harga paling murah, aman, cepat, dan terpercaya hanya di Kinzstore. Cara topup Daybreak Legends via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
+    "Top up diamond Daybreak Legends harga paling murah, aman, cepat, dan terpercaya hanya di ALIGO. Cara topup Daybreak Legends via ID termurah cukup dengan memasukkan ID dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.",
   descriptionSteps: [
     "Waktu proses 1 detik (setelah pembayaran diterima)",
     "Layanan top up open 24 Jam Non Stop",

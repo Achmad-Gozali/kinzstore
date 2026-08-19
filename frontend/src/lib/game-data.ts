@@ -60,7 +60,16 @@ export const POPULAR: PopularItem[] = RAW_POPULAR.map(([name, publisher, ext]) =
   publisher,
 }));
 
-export const LOGO_SRC = "/images/logo.jpg";
-export const HERO_SRC = "/images/hero-banner.jpg";
+export const LOGO_SRC = "/images/logo.webp";
+
+export interface HeroBanner {
+  src: string;
+  alt: string;
+}
+
+export const HERO_BANNERS: HeroBanner[] = [
+  { src: "/images/hero-banner.webp", alt: "ALIGO - TopUp Games" },
+  { src: "/images/banner-merdeka.webp", alt: "ALIGO - Promo Kemerdekaan" },
+];
 export const WHATSAPP_NUMBER = "6282249244647";
 export const INSTAGRAM_HANDLE = "achmadgozali27_";

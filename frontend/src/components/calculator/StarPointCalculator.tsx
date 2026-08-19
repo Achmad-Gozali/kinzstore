@@ -30,7 +30,7 @@ export function StarPointCalculator({
         <div>
           <Image
             src={LOGO_SRC}
-            alt="KINZSTORE"
+            alt="ALIGO"
             width={180}
             height={120}
             sizes="(min-width: 640px) 170px, 130px"

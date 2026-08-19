@@ -1,6 +1,6 @@
 import type { GameDetail } from "@/types/game";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kinzstore.id").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.aligo.id").replace(/\/$/, "");
 
 const MAX_DESCRIPTION_LENGTH = 160;
 
@@ -16,7 +16,7 @@ function truncate(text: string, maxLength: number): string {
 export function buildGameMetaDescription(detail: GameDetail | undefined, fallbackName: string): string {
   if (!detail) {
     return truncate(
-      `Top up ${fallbackName} harga paling murah, aman, dan cepat hanya di KINZSTORE. Proses instan 24 jam dengan metode pembayaran terlengkap.`,
+      `Top up ${fallbackName} harga paling murah, aman, dan cepat hanya di ALIGO. Proses instan 24 jam dengan metode pembayaran terlengkap.`,
       MAX_DESCRIPTION_LENGTH
     );
   }

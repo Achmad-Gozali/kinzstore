@@ -80,10 +80,10 @@ export function Header() {
       <div className="border-b border-border/20">
         <div className="container mx-auto flex h-16 items-center justify-between gap-2 px-4 sm:gap-4">
           <Link href="/" className="flex shrink-0 items-center">
-            <span className="sr-only">KINZSTORE Logo</span>
+            <span className="sr-only">ALIGO Logo</span>
             <Image
               src={LOGO_SRC}
-              alt="KINZSTORE"
+              alt="ALIGO"
               width={180}
               height={120}
               sizes="60px"

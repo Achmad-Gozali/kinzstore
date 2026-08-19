@@ -4,7 +4,7 @@ import { Trophy } from "lucide-react";
 export const metadata: Metadata = {
   title: "Leaderboard - Top 10 Pembelian Terbanyak",
   description:
-    "Lihat daftar 10 pembelian terbanyak di KINZSTORE hari ini, minggu ini, dan bulan ini. Data diperbaharui secara real-time.",
+    "Lihat daftar 10 pembelian terbanyak di ALIGO hari ini, minggu ini, dan bulan ini. Data diperbaharui secara real-time.",
   alternates: { canonical: "/leaderboard" },
 };
 
@@ -37,7 +37,7 @@ export default function LeaderboardPage() {
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-base font-semibold leading-7 text-primary">Leaderboard</p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Top 10 Pembelian Terbanyak di KINZSTORE
+              Top 10 Pembelian Terbanyak di ALIGO
             </h1>
           </div>
           <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-7 text-foreground sm:text-lg sm:leading-8">

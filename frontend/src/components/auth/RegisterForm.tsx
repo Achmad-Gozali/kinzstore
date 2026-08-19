@@ -50,7 +50,7 @@ export function RegisterForm() {
       )}
 
       <Link href="/">
-        <Image src={LOGO_SRC} alt="KINZSTORE" width={180} height={120} sizes="130px" className="h-20 w-auto" />
+        <Image src={LOGO_SRC} alt="ALIGO" width={180} height={120} sizes="130px" className="h-20 w-auto" />
       </Link>
 
       <div className="w-full max-w-md rounded-3xl bg-background p-6 text-left shadow-md sm:p-8">
