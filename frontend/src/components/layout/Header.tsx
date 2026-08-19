@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Search, LogIn, UserPlus, LogOut, Menu, X, ChevronDown, CircleAlert, LayoutGrid } from "lucide-react";
 import { LOGO_SRC } from "@/lib/game-data";
 import { DASHBOARD_NAV_ITEMS, isDashboardNavActive } from "@/lib/dashboard-nav";
-import { clearDemoSession, hasDemoSession, DEMO_USERNAME } from "@/lib/auth-demo";
+import { clearDemoSession, hasDemoSession, subscribeDemoSession, DEMO_USERNAME } from "@/lib/auth-demo";
 import { cn } from "@/lib/utils";
 import { SearchBox } from "./SearchBox";
 import {
@@ -64,8 +64,12 @@ export function Header() {
   const [calcOpen, setCalcOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(() => hasDemoSession());
-  const [checkedPathname, setCheckedPathname] = useState(pathname);
+  // Status login (demo) — subscribe ke perubahan cookie session lewat event
+  // custom (lihat lib/auth-demo.ts), BUKAN cuma re-cek saat pathname berubah.
+  // Dengan begini, logout/login dari komponen manapun (Header sendiri,
+  // DashboardSidebar, LoginForm) langsung sinkron ke UI ini seketika, tanpa
+  // nunggu navigasi atau butuh refresh manual.
+  const isLoggedIn = useSyncExternalStore(subscribeDemoSession, hasDemoSession, () => false);
   // Drawer di-portal ke document.body hanya di client (SSR tidak punya
   // document.body) — useSyncExternalStore dipakai (bukan useEffect+setState)
   // supaya deteksi "sudah mount di client" ini tidak melanggar lint
@@ -82,15 +86,6 @@ export function Header() {
 
   const calcActive = pathname.startsWith("/calculator");
 
-  // Status login (demo), BUKAN halaman aktif — supaya overlay tetap menampilkan
-  // nav dashboard di halaman mana pun selama user login, sesuai perilaku reference.
-  // Re-cek tiap navigasi (login/logout di app ini selalu diikuti redirect) — pakai
-  // pola "adjust state during render" (bukan useEffect+setState) sesuai react-hooks lint.
-  if (pathname !== checkedPathname) {
-    setCheckedPathname(pathname);
-    setIsLoggedIn(hasDemoSession());
-  }
-
   function showToast(message: string) {
     setToast(message);
     if (toastTimer.current) clearTimeout(toastTimer.current);
@@ -102,6 +97,10 @@ export function Header() {
   // begitu sistem autentikasi Kinzstore sudah tersedia.
   function handleDashboardLogout() {
     setMobileOpen(false);
+    setAccountOpen(false);
+    // clearDemoSession() dispatch event yang langsung dibaca isLoggedIn di atas
+    // (useSyncExternalStore) — avatar/dropdown berganti ke Masuk/Daftar seketika,
+    // tidak menunggu redirect di bawah selesai.
     clearDemoSession();
     showToast("Kamu berhasil keluar. Mengarahkan ke beranda...");
     setTimeout(() => router.push("/"), 800);

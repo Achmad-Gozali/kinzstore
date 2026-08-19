@@ -1,6 +1,7 @@
 "use client";
 
-import { BarChart3 } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { BarChart3, ChevronRight } from "lucide-react";
 
 export function DashboardPageHeader({ title, description }: { title: string; description: string }) {
   return (
@@ -94,32 +95,71 @@ export function DashboardActionsRow({
 }
 
 export function DashboardTable({ columns }: { columns: string[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  // Indikator scroll-x (fade + panah) hanya relevan kalau tabel benar-benar
+  // overflow — dicek lewat scrollWidth vs clientWidth, bukan diasumsikan
+  // selalu true, supaya di layar lebar (tabel muat penuh) indikator tidak
+  // ikut muncul.
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    updateScrollState();
+    window.addEventListener("resize", updateScrollState);
+    return () => window.removeEventListener("resize", updateScrollState);
+  }, [updateScrollState]);
+
   return (
-    <div className="-mx-4 w-full overflow-x-auto ring-1 ring-muted sm:mx-0 sm:rounded-lg">
-      <table className="min-w-full divide-y divide-muted">
-        <thead>
-          <tr>
-            {columns.map((col) => (
-              <th
-                key={col}
-                scope="col"
-                className="whitespace-nowrap px-3 py-3.5 text-left text-xs font-semibold text-foreground first:pl-4 first:sm:pl-6 last:pr-4 last:sm:pr-6"
-              >
-                {col}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colSpan={columns.length} className="px-4 py-24 text-center sm:px-6">
-              <BarChart3 className="mx-auto size-10 text-foreground" />
-              <h3 className="mt-2 font-semibold text-foreground">Data tidak ditemukan!</h3>
-              <p className="mt-1 text-sm text-secondary-foreground">Tidak ada aktifitasi data.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="relative -mx-4 sm:mx-0">
+      <div
+        ref={scrollRef}
+        onScroll={updateScrollState}
+        className="w-full touch-pan-x overflow-x-auto ring-1 ring-muted [-webkit-overflow-scrolling:touch] sm:rounded-lg"
+      >
+        <table className="min-w-full divide-y divide-muted">
+          <thead>
+            <tr>
+              {columns.map((col) => (
+                <th
+                  key={col}
+                  scope="col"
+                  className="min-w-[7rem] whitespace-nowrap px-3 py-3.5 text-left text-xs font-semibold text-foreground first:pl-4 first:sm:pl-6 last:pr-4 last:sm:pr-6"
+                >
+                  {col}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colSpan={columns.length} className="px-4 py-24 text-center sm:px-6">
+                <BarChart3 className="mx-auto size-10 text-foreground" />
+                <h3 className="mt-2 font-semibold text-foreground">Data tidak ditemukan!</h3>
+                <p className="mt-1 text-sm text-secondary-foreground">Tidak ada aktifitasi data.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Fade + panah di tepi kanan/kiri: penanda visual bahwa tabel bisa
+          di-scroll ke samping, cuma muncul di mobile (sm:hidden) dan cuma
+          kalau memang overflow (lihat canScrollLeft/Right di atas). */}
+      {canScrollRight && (
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex w-10 items-center justify-end bg-gradient-to-l from-black/30 to-transparent sm:hidden">
+          <ChevronRight className="mr-1 size-4 text-white/80" />
+        </div>
+      )}
+      {canScrollLeft && (
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/30 to-transparent sm:hidden" />
+      )}
     </div>
   );
 }
